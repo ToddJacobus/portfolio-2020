@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+
+import HeroPage from './components/HeroPage'
 
 function App() {
   return (
     <div className="App">
-      this is my app...
+      <HeroPage />
     </div>
   );
 }
