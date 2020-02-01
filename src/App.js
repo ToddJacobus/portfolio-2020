@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import { withStyles } from '@material-ui/core/styles';
 
 import HeroPage from './components/HeroPage'
 
-function App() {
-  return (
-    <div className="App">
-      <HeroPage />
-    </div>
-  );
+const styles = {
+  root: {
+    width: '100vw',
+    height: '100vh',
+    margin: 0
+  }
 }
 
-export default App;
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
+  render () {
+    return (
+      <div className={this.props.classes.root}>
+        <HeroPage />
+      </div>
+    )
+  }
+  
+}
+
+export default withStyles(styles)(App);
