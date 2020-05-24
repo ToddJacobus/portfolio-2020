@@ -1,51 +1,64 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { withStyles } from '@material-ui/core/styles';
+import { Grid, Typography, makeStyles } from '@material-ui/core';
 
-import { Grid, Paper, Typography } from '@material-ui/core';
-
-const styles = {
+const useStyles = makeStyles(theme => ({
     root: {
-        flexGrow: 1,
+
     },
     leftPanel: {
+        border: '1px solid green',
         height: '100vh',
-    },
-    heroImage: {
         position: 'relative',
+    },
+    rightPanel: {
+        border: '1px solid red',
         height: '100vh',
-        left: 0,
-        margin: 0,
-        padding: 0
-    }
+        position: 'relative',
+    },
+    title: {
+        position: 'absolute',
+        top: '10%',
+        marginLeft: 10,
+        fontFamily: "'Thasadith', sans-serif",
+    },
+    subTitleContainer: {
+        maxWidth: 400,
+        marginLeft: 'auto',
+        marginRight: 50,
+    },
+    subTitle: {
+        position: 'absolute',
+        top: '33%',
+        marginLeft: 'auto',
+        fontFamily: "'Sarabun', sans-serif",
+        textAlign: 'justify',
+        maxWidth: 400,
+    },
+}))
+
+
+const HeroPage = props => {
+    const classes = useStyles();
+
+    return(
+        <Grid container>
+            <Grid item sm={4} className={classes.leftPanel}>
+                <div>Image goes here...</div>
+            </Grid>
+            <Grid item sm={8} className={classes.rightPanel}>
+                <Typography variant="h1" className={classes.title}>Todd Jacobus</Typography>
+                <div className={classes.subTitleContainer}>
+                    <Typography variant="h6" className={classes.subTitle}>
+                        Specializing in geospatial data visualization, 
+                        analysis and processing.  Delivering hand-crafted
+                        web products, designed with care, front to back.
+                    </Typography>    
+                </div>
+                
+            </Grid>
+        </Grid>
+    )
 }
 
-class HeroPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
-
-    render() {
-        return(
-            <div>
-                <div>
-                    <div className={this.props.classes.leftPanel}>
-                        <img className={this.props.classes.heroImage} src="https://res.cloudinary.com/dhojr410t/image/upload/v1580565491/botanic_gardens-9076_xljz4o.jpg"/>
-                    </div>
-                    <Typography variant="h1">
-                        Todd Jacobus
-                    </Typography>
-                </div>
-                <div>
-                    right half
-                </div>
-            </div>
-        )
-    }
-
-}
-
-export default withStyles(styles)(HeroPage);
+export default HeroPage;
