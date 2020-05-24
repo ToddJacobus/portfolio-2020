@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import HeroPage from './components/HeroPage'
+import HeroPage from './components/HeroPage';
+import Projects from './components/Projects';
 
 const styles = {
   root: {
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div className={this.props.classes.root}>
         <HeroPage />
+        <Projects />
       </div>
     )
   }
