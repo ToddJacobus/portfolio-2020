@@ -2,15 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import {
-    makeStyles
+    makeStyles, Typography
 } from '@material-ui/core';
 
 import {
     fetchProjects,
-} from '../actions';
+} from '../../actions';
+
+import Project from './Project';
 
 const useStyles = makeStyles(theme => ({
-    root: {},
+    root: {
+        maxWidth: 1200,
+        marginTop: 100,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        border: '1px dashed green'
+    },
 }));
 
 const Projects = props => {
@@ -29,7 +37,15 @@ const Projects = props => {
         <div className={classes.root}>
             {
                 projects_content ?
-                <div> Yay projects! </div>
+                projects_content.items.map((item, index) => {
+                    return <Project 
+                            // {...item}
+                            item={item}
+                            linkedAssets={projects_content.linkedAssets} 
+                            // linkedAssets={projects_content.linkedAssets ? projects_content.linkedAsssets : []} 
+                            key={index} 
+                            />
+                })
                 : <div />
             }
         </div>

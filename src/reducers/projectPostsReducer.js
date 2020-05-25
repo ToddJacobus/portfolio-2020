@@ -18,7 +18,7 @@ export default (state = null, action) => {
                             }
                         }).sort((a, b) => a.order - b.order)
                     ],
-                    // linkedAssets: action.payload.includes.Asset,
+                    linkedAssets: action.payload.includes ? action.payload.includes.Asset : [],
                     total: action.payload.total,
                 }
             } else {

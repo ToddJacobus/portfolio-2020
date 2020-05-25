@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 import HeroPage from './components/HeroPage';
-import Projects from './components/Projects';
+import Projects from './components/projects/Projects';
 
 const styles = {
   root: {

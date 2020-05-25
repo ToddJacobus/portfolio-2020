@@ -7,14 +7,20 @@ const useStyles = makeStyles(theme => ({
 
     },
     leftPanel: {
-        border: '1px solid green',
+        // border: '1px solid green',
         height: '100vh',
         position: 'relative',
     },
     rightPanel: {
-        border: '1px solid red',
+        // border: '1px solid red',
         height: '100vh',
         position: 'relative',
+        maxWidth: 800,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+    heroImage: {
+        height: '100%',
     },
     title: {
         position: 'absolute',
@@ -24,8 +30,7 @@ const useStyles = makeStyles(theme => ({
     },
     subTitleContainer: {
         maxWidth: 400,
-        marginLeft: 'auto',
-        marginRight: 50,
+        marginLeft: 33,
     },
     subTitle: {
         position: 'absolute',
@@ -43,10 +48,14 @@ const HeroPage = props => {
 
     return(
         <Grid container>
-            <Grid item sm={4} className={classes.leftPanel}>
-                <div>Image goes here...</div>
+            <Grid item sm={2} className={classes.leftPanel}>
+                <img
+                src="https://images.ctfassets.net/cfokra459rhp/3PATgiSaaqbvuqUHL20y5z/d42ba484fa07b033c72118a6ff362200/botanic_gardens-9076.jpg" 
+                className={classes.heroImage}
+                alt="Hero"
+                />
             </Grid>
-            <Grid item sm={8} className={classes.rightPanel}>
+            <Grid item sm={10} className={classes.rightPanel}>
                 <Typography variant="h1" className={classes.title}>Todd Jacobus</Typography>
                 <div className={classes.subTitleContainer}>
                     <Typography variant="h6" className={classes.subTitle}>
