@@ -16,7 +16,10 @@ const useStyles = makeStyles(theme => ({
 const Projects = props => {
     const classes = useStyles();
 
-    const { fetchProjects } = props;
+    const { 
+        fetchProjects,
+        projects_content,
+     } = props;
 
     React.useEffect(() => {
         fetchProjects();
@@ -24,7 +27,11 @@ const Projects = props => {
 
     return (
         <div className={classes.root}>
-            Projects...wow!
+            {
+                projects_content ?
+                <div> Yay projects! </div>
+                : <div />
+            }
         </div>
     )
 }
