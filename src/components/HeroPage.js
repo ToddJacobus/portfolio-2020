@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { Grid, Typography, makeStyles } from '@material-ui/core';
+import { 
+    Grid, 
+    Typography, 
+    makeStyles, 
+    Button,
+    Divider,
+} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -25,20 +31,30 @@ const useStyles = makeStyles(theme => ({
     title: {
         position: 'absolute',
         top: '10%',
-        marginLeft: 10,
+        right: 5,
+        marginLeft: 'auto',
         fontFamily: "'Thasadith', sans-serif",
     },
     subTitleContainer: {
         maxWidth: 400,
-        marginLeft: 33,
+        marginLeft: 'auto',
     },
     subTitle: {
         position: 'absolute',
         top: '33%',
+        right: 5,
         marginLeft: 'auto',
         fontFamily: "'Sarabun', sans-serif",
         textAlign: 'justify',
         maxWidth: 400,
+    },
+    navbarContainer: {
+        position: 'absolute',
+        bottom: 5,
+        right: 5,
+        width: 400,
+        display: 'flex',
+        justifyContent: 'space-between',
     },
 }))
 
@@ -63,6 +79,15 @@ const HeroPage = props => {
                         analysis and processing.  Delivering hand-crafted
                         web products, designed with care, front to back.
                     </Typography>    
+                </div>
+                <div className={classes.navbarContainer}>
+                    <Button>Projects</Button>
+                    {/* <Divider orientation="vertical" flexItem /> */}
+                    <hr></hr>
+                    <Button>GitHub</Button>
+                    {/* <Divider orientation="vertical" flexItem /> */}
+                    <hr></hr>
+                    <Button>Blog</Button>
                 </div>
                 
             </Grid>

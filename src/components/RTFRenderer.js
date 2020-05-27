@@ -10,14 +10,15 @@ import {
     Card,
     CardMedia,
     Grid,
+    Typography,
 } from '@material-ui/core';
 
 
 
 const useStyles = makeStyles(theme => ({
     embeddedAssetContainer: {
-        width: '66%',
-        maxWidth: 500,
+        // width: '66%',
+        // maxWidth: 500,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 30,
@@ -30,7 +31,13 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
         height: 'auto',
         borderRadius: 5,
-        boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19)',
+        // boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19)',
+    },
+    subtitleContainer: {
+        textAlign: 'justify',
+    },
+    subtitle: {
+
     },
     iframeContainer: {
         width: '100%',
@@ -59,11 +66,24 @@ const RenderContentfulRichText = (text, assets) => {
                         case 'image':
                             return (
                                 <div className={classes.embeddedAssetContainer}>
-                                    <img 
-                                        className={classes.embeddedAsset}
-                                        src={asset.fields.file.url}
-                                        alt={asset.fields.title}
-                                    />
+                                    <Grid container spacing={6}>
+                                        <Grid item sm={6} className={classes.subtitleContainer}>
+                                            <Typography 
+                                                variant="subtitle1" 
+                                                className={classes.subtitle}
+                                            >
+                                                {asset.fields.description}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item sm={6}>
+                                            <img 
+                                                className={classes.embeddedAsset}
+                                                src={asset.fields.file.url}
+                                                alt={asset.fields.title}
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    
                                 </div>
                             )
                             
