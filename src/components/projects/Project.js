@@ -112,11 +112,11 @@ const Project = props => {
             </div>
             <div className={classes.listerContainer}>
                 <Grid container spacing={0}>
-                    <Grid item xs={6}>
+                    <Grid item sm={6}>
                         <Lister {...item.objectives} />
                         <Lister {...item.techStack} />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item sm={6}>
                         <div className={classes.heroImageContainer}>
                             <img 
                                 className={classes.heroImage} 

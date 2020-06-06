@@ -17,15 +17,17 @@ import {
 
 const useStyles = makeStyles(theme => ({
     embeddedAssetContainer: {
-        // width: '66%',
-        // maxWidth: 500,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 50,
         marginBottom: 50,
+        paddingTop: 50,
+        paddingBottom: 50,
         [theme.breakpoints.down('xs')]: {
             width: '100%',
         },
+        borderTop: '1px solid black',
+        borderBottom: '1px solid black',
     },
     imageContainer: {
         display: 'flex',
@@ -45,7 +47,7 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'justify',
     },
     subtitle: {
-
+        fontFamily: "'Sarabun', sans-serif",
     },
     iframeContainer: {
         width: '100%',
@@ -75,14 +77,6 @@ const RenderContentfulRichText = (text, assets) => {
                             return (
                                 <div className={classes.embeddedAssetContainer}>
                                     <Grid container spacing={6}>
-                                        <Grid item sm={6} className={classes.subtitleContainer}>
-                                            <Typography 
-                                                variant="subtitle1" 
-                                                className={classes.subtitle}
-                                            >
-                                                {asset.fields.description}
-                                            </Typography>
-                                        </Grid>
                                         <Grid item sm={6}>
                                             <div className={classes.imageContainer}>
                                                 <img 
@@ -91,7 +85,14 @@ const RenderContentfulRichText = (text, assets) => {
                                                     alt={asset.fields.title}
                                                 />
                                             </div>
-                                            
+                                        </Grid>
+                                        <Grid item sm={6} className={classes.subtitleContainer}>
+                                            <Typography 
+                                                variant="subtitle1" 
+                                                className={classes.subtitle}
+                                            >
+                                                {asset.fields.description}
+                                            </Typography>
                                         </Grid>
                                     </Grid>
                                     
