@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 
 import HomeIcon from '@material-ui/icons/Home';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import { Link } from 'react-router-dom';
 
@@ -27,12 +28,30 @@ const useStyles = makeStyles(theme => ({
         background: '#435922',
         color: 'white',
         position: 'fixed',
-        margin: 50,
+        // margin: 50,
         right: 5,
+        top: 5,
+        margin: 50,
         [theme.breakpoints.down('sm')]: {
-            bottom: 5,
-            margin: 10,
+            bottom: 10,
+            // margin: 10,
         },
+    },
+    drawerToggleFab: {
+        background: '#435922',
+        color: 'white',
+        position: 'fixed',
+        // margin: 50,
+        left: 5,
+        top: 5,
+        margin: 50,
+        [theme.breakpoints.down('sm')]: {
+            bottom: 10,
+            // margin: 10,
+        },
+    },
+    projectsListRoot: {
+        marginTop: 100,
     },
 }));
 
@@ -49,7 +68,7 @@ const Projects = props => {
     }, [fetchProjects])
 
     return (
-        <div className={classes.root}>
+        <div>
             <Fab
                 size="small"
                 className={classes.floatingActionButton}
@@ -58,17 +77,25 @@ const Projects = props => {
             >
                 <HomeIcon />
             </Fab>
-            {
-                projects_content ?
-                projects_content.items.map((item, index) => {
-                    return <Project 
-                            item={item}
-                            linkedAssets={projects_content.linkedAssets} 
-                            key={index} 
-                            />
-                })
-                : <div />
-            }
+            <Fab
+                size="small"
+                className={classes.drawerToggleFab}
+            >
+                <ArrowForwardIosIcon />
+            </Fab>
+            <div className={classes.root}>
+                    {
+                        projects_content ?
+                        projects_content.items.map((item, index) => {
+                            return <Project 
+                                    item={item}
+                                    linkedAssets={projects_content.linkedAssets} 
+                                    key={index} 
+                                    />
+                        })
+                        : <div />
+                    }
+            </div>
         </div>
     )
 }
