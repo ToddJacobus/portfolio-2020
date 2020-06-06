@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
-// import reducers here...
+import projectPostsReducer from './projectPostsReducer';
 
 export default combineReducers({
+    projects_content: projectPostsReducer,
 });

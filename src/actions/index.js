@@ -1,1 +1,9 @@
-// Create actions here...
+import getContent from '../apis/getContent';
+
+const API_TOKEN = "euE9wJ3yl9UtbqPE7kajx0yxICwn837oaHImm4nKC98"
+
+//  --  CONTENT FETCHING ACTIONS
+export const fetchProjects = props => async dispatch => {
+    const response = await getContent.get(`?access_token=${API_TOKEN}&content_type=projectPost`)
+    dispatch({type: 'GET_PROJECT_POSTS', payload: response.data})
+};
