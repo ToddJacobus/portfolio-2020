@@ -7,6 +7,10 @@ import {
     Button,
 } from '@material-ui/core';
 
+import {
+    Link,
+} from 'react-router-dom';
+
 const useStyles = makeStyles(theme => ({
     root: {
         height: '100vh',
@@ -132,11 +136,26 @@ const HeroPage = props => {
             </Grid>
             <div className={classes.navbarContainer}>
                 <div className={classes.navbar}>
-                    <Button>Projects</Button>
+                    <Button
+                        component={Link}
+                        to="/projects"
+                    >
+                        Projects
+                    </Button>
                     <hr></hr>
-                    <Button>GitHub</Button>
+                    <Button
+                        href="https://github.com/ToddJacobus?tab=repositories"
+                        target="_blank"
+                    >
+                        GitHub
+                    </Button>
                     <hr></hr>
-                    <Button>Blog</Button>
+                    <Button
+                        component={Link}
+                        to="/contact"
+                    >
+                        Contact
+                    </Button>
                 </div>
             </div>    
         </div>
