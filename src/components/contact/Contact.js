@@ -3,7 +3,6 @@ import React from 'react';
 import {
     makeStyles,
     Grid,
-    Button,
     Typography,
     List,
     ListItem,
@@ -22,9 +21,15 @@ const useStyles = makeStyles(theme => ({
     },
     leftPanel: {
         height: '100vh',
+        [theme.breakpoints.down('sm')]: {
+            height: 500,
+        },
     },
     rightPanel: {
         height: '100vh',
+        [theme.breakpoints.down('sm')]: {
+            height: 500,
+        },
     },
     contactBodyContainer: {
         width: '100%',
@@ -45,6 +50,7 @@ const useStyles = makeStyles(theme => ({
     },
     contactBodyTitle: {
         fontFamily: "'Montserrat', sans-serif",
+        textAlign: 'center',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
