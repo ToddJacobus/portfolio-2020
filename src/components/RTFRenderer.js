@@ -21,16 +21,24 @@ const useStyles = makeStyles(theme => ({
         // maxWidth: 500,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 30,
-        marginBottom: 30,
+        marginTop: 50,
+        marginBottom: 50,
         [theme.breakpoints.down('xs')]: {
             width: '100%',
         },
+    },
+    imageContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '100%',
     },
     embeddedAsset: {
         width: '100%',
         height: 'auto',
         borderRadius: 5,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         // boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19)',
     },
     subtitleContainer: {
@@ -76,11 +84,14 @@ const RenderContentfulRichText = (text, assets) => {
                                             </Typography>
                                         </Grid>
                                         <Grid item sm={6}>
-                                            <img 
-                                                className={classes.embeddedAsset}
-                                                src={asset.fields.file.url}
-                                                alt={asset.fields.title}
-                                            />
+                                            <div className={classes.imageContainer}>
+                                                <img 
+                                                    className={classes.embeddedAsset}
+                                                    src={asset.fields.file.url}
+                                                    alt={asset.fields.title}
+                                                />
+                                            </div>
+                                            
                                         </Grid>
                                     </Grid>
                                     

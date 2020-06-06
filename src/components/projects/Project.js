@@ -16,8 +16,11 @@ import RenderContentfulRichText from '../RTFRenderer';
 
 const useStyles = makeStyles(theme => ({
     root: {},
+    listerRoot: {},
     titleContainer: {
-        margin: 10,
+        marginLeft: 10,
+        marginRight: 'auto',
+        maxWidth: 800,
 
     },
     title: {
@@ -36,9 +39,18 @@ const useStyles = makeStyles(theme => ({
         maxWidth: 800,
         marginLeft: 'auto',
         marginRight: 'auto',
+        marginTop: 50,
+        marginBottom: 50,
+    },
+    listerText: {
+        fontFamily: "'Sarabun', sans-serif",
     },
     heroImageContainer: {
         maxWidth: 400,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '100%',
     },
     heroImage: {
         width: '100%',
@@ -48,11 +60,17 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Lister = props => {
+    const classes = useStyles();
     const { items, title } = props;
 
     return (
-        <div>
-            <Typography>{title}</Typography>
+        <div className={classes.listerRoot}>
+            <Typography 
+                className={classes.listerText} 
+                variant={'h6'
+            }>
+                {title}
+            </Typography>
             <List>
                 {
                     items ? items.map((item, index) => {
@@ -60,7 +78,8 @@ const Lister = props => {
                                     <ListItemIcon>
                                         <ArrowRightSharpIcon />
                                     </ListItemIcon>
-                                    <ListItemText 
+                                    <ListItemText
+                                        className={classes.listerText} 
                                         primary={item.primary} 
                                         secondary={item.secondary} 
                                     />
@@ -92,7 +111,7 @@ const Project = props => {
                 </Typography>
             </div>
             <div className={classes.listerContainer}>
-                <Grid container spacing={2}>
+                <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Lister {...item.objectives} />
                         <Lister {...item.techStack} />
