@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: 100,
         marginLeft: 'auto',
         marginRight: 'auto',
-        border: '1px dashed green'
+        // border: '1px dashed green'
     },
 }));
 

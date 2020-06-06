@@ -8,6 +8,8 @@ export default (state = null, action) => {
                             return {
                                 id: item.sys.id,
                                 title: item.fields.title,
+                                objectives: item.fields.objectives,
+                                techStack: item.fields.techStack,
                                 body: item.fields.body,
                                 order: item.fields.order,
                                 heroImage: action.payload.includes && item.fields.heroImage ?

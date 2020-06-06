@@ -1,8 +1,16 @@
 import React from 'react'
 
 import {
-    makeStyles, Typography
+    makeStyles, 
+    Typography, 
+    Grid,
+    List,
+    ListItem,
+    ListItemText,
+    ListItemIcon,
+
 } from '@material-ui/core';
+import ArrowRightSharpIcon from '@material-ui/icons/ArrowRightSharp';
 
 import RenderContentfulRichText from '../RTFRenderer';
 
@@ -24,7 +32,46 @@ const useStyles = makeStyles(theme => ({
         paddingLeft: 10,
         paddingRight: 10,
     },
+    listerContainer: {
+        maxWidth: 800,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+    heroImageContainer: {
+        maxWidth: 400,
+    },
+    heroImage: {
+        width: '100%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
 }))
+
+const Lister = props => {
+    const { items, title } = props;
+
+    return (
+        <div>
+            <Typography>{title}</Typography>
+            <List>
+                {
+                    items ? items.map((item, index) => {
+                        return <ListItem>
+                                    <ListItemIcon>
+                                        <ArrowRightSharpIcon />
+                                    </ListItemIcon>
+                                    <ListItemText 
+                                        primary={item.primary} 
+                                        secondary={item.secondary} 
+                                    />
+                                </ListItem>
+                    }) : <div />
+                }
+            </List>    
+        </div>
+        
+    )
+};
 
 const Project = props => {
     const classes = useStyles();
@@ -44,8 +91,25 @@ const Project = props => {
                     {item.title}
                 </Typography>
             </div>
+            <div className={classes.listerContainer}>
+                <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                        <Lister {...item.objectives} />
+                        <Lister {...item.techStack} />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <div className={classes.heroImageContainer}>
+                            <img 
+                                className={classes.heroImage} 
+                                src={item.heroImage} 
+                                alt={item.title} 
+                            />
+                        </div>
+                    </Grid>
+                </Grid>
+            </div>
+            
             <div className={classes.bodyContainer}>
-                {/* <RenderContentfulRichText text={body} assets={linkedAssets}/> */}
                 {RenderContentfulRichText(item.body, linkedAssets)}
             </div>
         </div>
