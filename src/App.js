@@ -6,11 +6,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 
 import HeroPage from './components/HeroPage';
 import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
 
 const styles = {
   root: {
@@ -30,6 +30,9 @@ class App extends Component {
       <Router>
         <div className={this.props.classes.root}>
           <Switch>
+            <Route path="/contact">
+              <Contact />
+            </Route>
             <Route path="/projects">
               <Projects />
             </Route>
