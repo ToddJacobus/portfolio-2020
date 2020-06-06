@@ -6,9 +6,7 @@ import {
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { 
-    Card,
-    CardMedia,
+import {
     Grid,
     Typography,
 } from '@material-ui/core';
@@ -19,8 +17,8 @@ const useStyles = makeStyles(theme => ({
     embeddedAssetContainer: {
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 50,
-        marginBottom: 50,
+        marginTop: 100,
+        marginBottom: 100,
         paddingTop: 50,
         paddingBottom: 50,
         [theme.breakpoints.down('xs')]: {
@@ -41,13 +39,12 @@ const useStyles = makeStyles(theme => ({
         borderRadius: 5,
         marginLeft: 'auto',
         marginRight: 'auto',
-        // boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19)',
     },
     subtitleContainer: {
         textAlign: 'justify',
     },
     subtitle: {
-        fontFamily: "'Sarabun', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
     },
     iframeContainer: {
         width: '100%',

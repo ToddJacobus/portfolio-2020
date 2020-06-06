@@ -24,11 +24,11 @@ const useStyles = makeStyles(theme => ({
 
     },
     title: {
-        fontFamily: "'Thasadith', sans-serif",
+        fontFamily: "'Dosis', sans-serif",
     },
     bodyContainer: {
         marginTop: 10,
-        fontFamily: "'Sarabun', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
         maxWidth: 800,
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -39,11 +39,11 @@ const useStyles = makeStyles(theme => ({
         maxWidth: 800,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 50,
-        marginBottom: 50,
+        marginTop: 100,
+        marginBottom: 100,
     },
     listerText: {
-        fontFamily: "'Sarabun', sans-serif",
+        fontFamily: "'Montserrat', sans-serif",
     },
     heroImageContainer: {
         maxWidth: 400,
