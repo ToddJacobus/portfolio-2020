@@ -150,7 +150,12 @@ const HeroPage = props => {
                         GitHub
                     </Button>
                     <hr></hr>
-                    <Button>Contact</Button>
+                    <Button
+                        component={Link}
+                        to="/contact"
+                    >
+                        Contact
+                    </Button>
                 </div>
             </div>    
         </div>
