@@ -8,16 +8,33 @@ import {
     ListItem,
     ListItemIcon,
     ListItemText,
+    Fab,
 } from '@material-ui/core';
+
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import HomeIcon from '@material-ui/icons/Home';
+
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     root: {
         maxWidth: 1200,
         marginLeft: 'auto',
         marginRight: 'auto',
+    },
+    floatingActionButton: {
+        background: '#435922',
+        color: 'white',
+        position: 'absolute',
+        margin: 50,
+        right: 5,
+        [theme.breakpoints.down('sm')]: {
+            bottom: 5,
+            position: 'fixed',
+            margin: 10,
+        },
     },
     leftPanel: {
         height: '100vh',
@@ -123,7 +140,15 @@ const Contact = props => {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={6}>
+            <Fab
+                size="small"
+                className={classes.floatingActionButton}
+                component={Link}
+                to="/"
+            >
+                <HomeIcon />
+            </Fab>
+            <Grid container spacing={2}>
                 <Grid 
                     item sm={6}
                     className={classes.rightPanel}
