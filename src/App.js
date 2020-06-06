@@ -7,9 +7,6 @@ import Projects from './components/projects/Projects';
 
 const styles = {
   root: {
-    width: '100vw',
-    height: '100vh',
-    margin: 0
   }
 }
 
