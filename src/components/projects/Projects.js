@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import {
-    makeStyles, Typography
+    makeStyles
 } from '@material-ui/core';
 
 import {
@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
         marginTop: 100,
         marginLeft: 'auto',
         marginRight: 'auto',
-        // border: '1px dashed green'
     },
 }));
 
@@ -39,10 +38,8 @@ const Projects = props => {
                 projects_content ?
                 projects_content.items.map((item, index) => {
                     return <Project 
-                            // {...item}
                             item={item}
                             linkedAssets={projects_content.linkedAssets} 
-                            // linkedAssets={projects_content.linkedAssets ? projects_content.linkedAsssets : []} 
                             key={index} 
                             />
                 })
