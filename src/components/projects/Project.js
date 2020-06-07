@@ -15,7 +15,9 @@ import ArrowRightSharpIcon from '@material-ui/icons/ArrowRightSharp';
 import RenderContentfulRichText from '../RTFRenderer';
 
 const useStyles = makeStyles(theme => ({
-    root: {},
+    root: {
+        marginTop: 100,
+    },
     listerRoot: {},
     titleContainer: {
         marginLeft: 10,
