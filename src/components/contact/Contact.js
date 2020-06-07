@@ -24,17 +24,17 @@ const useStyles = makeStyles(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    floatingActionButton: {
-        background: '#435922',
-        color: 'white',
-        position: 'absolute',
-        margin: 50,
-        right: 5,
-        [theme.breakpoints.down('sm')]: {
-            bottom: 5,
-            position: 'fixed',
-            margin: 10,
-        },
+    homeActionButton: {
+        background: '#FCFCFC',
+        color: '#3B8DBF',
+        borderRadius: '10px 0px 0px 10px',
+        height: 65,
+        width: 65,
+        position: 'fixed',
+        right: 0,
+        top: 5,
+        boxShadow: theme.shadows[3],
+        zIndex: 3,
     },
     leftPanel: {
         height: '100vh',
@@ -142,7 +142,7 @@ const Contact = props => {
         <div className={classes.root}>
             <Fab
                 size="small"
-                className={classes.floatingActionButton}
+                className={classes.homeActionButton}
                 component={Link}
                 to="/"
             >

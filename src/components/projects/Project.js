@@ -47,6 +47,9 @@ const useStyles = makeStyles(theme => ({
     listerText: {
         fontFamily: "'Montserrat', sans-serif",
     },
+    arrowRightSharpIcon: {
+        zIndex: 0,
+    },
     heroImageContainer: {
         maxWidth: 400,
         display: 'flex',
@@ -78,7 +81,9 @@ const Lister = props => {
                     items ? items.map((item, index) => {
                         return <ListItem>
                                     <ListItemIcon>
-                                        <ArrowRightSharpIcon />
+                                        <ArrowRightSharpIcon 
+                                            className={classes.arrowRightSharpIcon} 
+                                        />
                                     </ListItemIcon>
                                     <ListItemText
                                         className={classes.listerText} 

@@ -8,7 +8,9 @@ import {
     List,
     ListItem,
     ListItemText,
+    Button,
 } from '@material-ui/core';
+import { shadows } from '@material-ui/system';
 
 import HomeIcon from '@material-ui/icons/Home';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
@@ -30,31 +32,29 @@ const useStyles = makeStyles(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
-    floatingActionButton: {
-        background: '#435922',
-        color: 'white',
+    homeActionButton: {
+        background: '#FCFCFC',
+        color: '#3B8DBF',
+        borderRadius: '10px 0px 0px 10px',
+        height: 65,
+        width: 65,
         position: 'fixed',
-        // margin: 50,
-        right: 5,
+        right: 0,
         top: 5,
-        margin: 50,
-        [theme.breakpoints.down('sm')]: {
-            bottom: 10,
-            // margin: 10,
-        },
+        boxShadow: theme.shadows[3],
+        zIndex: 3,
     },
-    drawerToggleFab: {
-        background: '#435922',
-        color: 'white',
+    drawerToggleButton: {
+        background: '#FCFCFC',
+        color: '#3B8DBF',
+        borderRadius: '0px 10px 10px 0px',
         position: 'fixed',
-        // margin: 50,
-        left: 5,
+        left: 0,
         top: 5,
-        margin: 50,
-        [theme.breakpoints.down('sm')]: {
-            bottom: 10,
-            // margin: 10,
-        },
+        height: 65,
+        width: 65,
+        boxShadow: theme.shadows[3],
+        zIndex: 3,
     },
     drawerPaper: {
         maxWidth: '80%',
@@ -116,17 +116,17 @@ const Projects = props => {
 
     return (
         <div>
-            <Fab
+            <Button
                 size="small"
-                className={classes.floatingActionButton}
+                className={classes.homeActionButton}
                 component={Link}
                 to="/"
             >
                 <HomeIcon />
-            </Fab>
+            </Button>
             <Fab
                 size="small"
-                className={classes.drawerToggleFab}
+                className={classes.drawerToggleButton}
                 onClick={() => handleSetOpen(true)}
             >
                 <ArrowForwardIosIcon />
