@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('xs')]: {
             width: '100%',
         },
-        borderTop: '1px solid black',
-        borderBottom: '1px solid black',
+        borderTop: '1px solid #3B8DBF',
+        borderBottom: '1px solid #3B8DBF',
     },
     imageContainer: {
         display: 'flex',

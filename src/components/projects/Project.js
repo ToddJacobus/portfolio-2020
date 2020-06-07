@@ -49,6 +49,7 @@ const useStyles = makeStyles(theme => ({
     },
     arrowRightSharpIcon: {
         zIndex: 0,
+        color: '#3B8DBF',
     },
     heroImageContainer: {
         maxWidth: 400,

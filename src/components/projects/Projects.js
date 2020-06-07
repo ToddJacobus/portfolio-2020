@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const DrawerList = props => {
-    const { items } = props;
+    const { items, handleSetOpen } = props;
 
     return (
         <List>
@@ -79,6 +79,7 @@ const DrawerList = props => {
                                 spy={true}
                                 smooth={true}
                                 duration={500}
+                                onClick={() => handleSetOpen(false)}
                             >
                                 <ListItemText 
                                     primary={item.title}
@@ -141,6 +142,7 @@ const Projects = props => {
             >
                 <DrawerList 
                     items={projects_content ? projects_content.items : []}
+                    handleSetOpen={handleSetOpen}
                 />
             </Drawer>
             <div className={classes.root}>
