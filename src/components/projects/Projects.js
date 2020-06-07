@@ -8,14 +8,14 @@ import {
     List,
     ListItem,
     ListItemText,
-    ListItemIcon,
 } from '@material-ui/core';
 
 import HomeIcon from '@material-ui/icons/Home';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import ArrowRightSharpIcon from '@material-ui/icons/ArrowRightSharp';
 
 import { Link } from 'react-router-dom';
+
+import { Link as ReactScrollLink } from 'react-scroll';
 
 import {
     fetchProjects,
@@ -71,7 +71,15 @@ const DrawerList = props => {
         <List>
             {
                 items ? items.map(item => {
-                    return  <ListItem button key={item.id}>
+                    return  <ListItem 
+                                button 
+                                key={item.id}
+                                component={ReactScrollLink}
+                                to={item.id}
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                            >
                                 <ListItemText 
                                     primary={item.title}
                                     secondary={
@@ -138,11 +146,11 @@ const Projects = props => {
             <div className={classes.root}>
                     {
                         projects_content ?
-                        projects_content.items.map((item, index) => {
+                        projects_content.items.map(item => {
                             return <Project 
                                     item={item}
                                     linkedAssets={projects_content.linkedAssets} 
-                                    key={index} 
+                                    key={item.id}
                                     />
                         })
                         : <div />

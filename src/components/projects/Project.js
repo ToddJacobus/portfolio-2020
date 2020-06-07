@@ -104,7 +104,7 @@ const Project = props => {
 
     return (
         <div className={classes.root}>
-            <div className={classes.titleContainer}>
+            <div className={classes.titleContainer} name={item.id}>
                 <Typography
                     className={classes.title}
                     variant="h2"
