@@ -117,7 +117,7 @@ const HeroPage = props => {
                 <Grid item sm={6} className={classes.leftPanel}>
                     <div className={classes.heroImageContainer}>
                         <img
-                            src="https://images.ctfassets.net/cfokra459rhp/65K1aZJJ3o9nQYu87B7xBZ/015766c87e6eb92134c7f058202d2341/SanFran-17-8570.jpg"
+                            src="https://images.ctfassets.net/cfokra459rhp/65K1aZJJ3o9nQYu87B7xBZ/19b58e373d962d00d73ea8d9b900d2c6/SanFran-17-8570.jpg"
                             className={classes.heroImage}
                             alt="Hero"
                         />   
@@ -144,7 +144,14 @@ const HeroPage = props => {
                     </Button>
                     <hr></hr>
                     <Button
-                        href="https://github.com/ToddJacobus?tab=repositories"
+                        href="https://gitlab.com/ToddJacobus"
+                        target="_blank"
+                    >
+                        GitLab
+                    </Button>
+                    <hr></hr>
+                    <Button
+                        href="https://github.com/ToddJacobus"
                         target="_blank"
                     >
                         GitHub
