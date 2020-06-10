@@ -11,7 +11,7 @@ import {
     Typography,
 } from '@material-ui/core';
 
-
+import GenericModal from '../components/GenericModal';
 
 const useStyles = makeStyles(theme => ({
     embeddedAssetContainer: {
@@ -40,6 +40,9 @@ const useStyles = makeStyles(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+    modalImage: {
+        borderRadius: 5,
+    },
     subtitleContainer: {
         textAlign: 'justify',
     },
@@ -63,6 +66,20 @@ const useStyles = makeStyles(theme => ({
 const RenderContentfulRichText = (text, assets) => {
     const classes = useStyles();
 
+    const [modalOpen, setModalOpen] = React.useState(false);
+    const [modalChildren, setModalChildren] = React.useState();
+
+    const handleModalOpen = children => {
+        setModalOpen(true);
+        setModalChildren(children)
+    };
+
+    const handleModalClose = () => {
+        setModalOpen(false);
+    };
+
+    
+
     const richTextOptions = {
         renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -73,6 +90,11 @@ const RenderContentfulRichText = (text, assets) => {
                         case 'image':
                             return (
                                 <div className={classes.embeddedAssetContainer}>
+                                    <GenericModal
+                                        children={modalChildren}
+                                        open={modalOpen}
+                                        handleModalClose={handleModalClose}
+                                    />
                                     <Grid container spacing={6}>
                                         <Grid item sm={6}>
                                             <div className={classes.imageContainer}>
@@ -80,6 +102,15 @@ const RenderContentfulRichText = (text, assets) => {
                                                     className={classes.embeddedAsset}
                                                     src={asset.fields.file.url}
                                                     alt={asset.fields.title}
+                                                    onClick={() => handleModalOpen(
+                                                        <div>
+                                                            <img 
+                                                                className={classes.modalImage}
+                                                                src={asset.fields.file.url} 
+                                                                alt={asset.fields.title} 
+                                                            />
+                                                        </div>
+                                                    )}
                                                 />
                                             </div>
                                         </Grid>
