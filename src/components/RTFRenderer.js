@@ -40,8 +40,12 @@ const useStyles = makeStyles(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+    modalImageContainer: {
+        textAlign: 'center',
+    },
     modalImage: {
         borderRadius: 5,
+        maxWidth: '90%',
     },
     subtitleContainer: {
         textAlign: 'justify',
@@ -89,7 +93,9 @@ const RenderContentfulRichText = (text, assets) => {
                     switch (mimeType.split('/')[0]) {
                         case 'image':
                             return (
-                                <div className={classes.embeddedAssetContainer}>
+                                <div 
+                                    className={classes.embeddedAssetContainer}
+                                >
                                     <GenericModal
                                         children={modalChildren}
                                         open={modalOpen}
@@ -97,13 +103,15 @@ const RenderContentfulRichText = (text, assets) => {
                                     />
                                     <Grid container spacing={6}>
                                         <Grid item sm={6}>
-                                            <div className={classes.imageContainer}>
+                                            <div 
+                                                className={classes.imageContainer}
+                                            >
                                                 <img 
                                                     className={classes.embeddedAsset}
                                                     src={asset.fields.file.url}
                                                     alt={asset.fields.title}
                                                     onClick={() => handleModalOpen(
-                                                        <div>
+                                                        <div className={classes.modalImageContainer}>
                                                             <img 
                                                                 className={classes.modalImage}
                                                                 src={asset.fields.file.url} 
