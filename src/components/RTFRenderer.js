@@ -9,6 +9,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import {
     Grid,
     Typography,
+    Button,
 } from '@material-ui/core';
 
 import GenericModal from '../components/GenericModal';
@@ -46,6 +47,7 @@ const useStyles = makeStyles(theme => ({
     modalImage: {
         borderRadius: 5,
         maxWidth: '90%',
+        maxHeight: 800,
     },
     subtitleContainer: {
         textAlign: 'justify',
@@ -106,20 +108,23 @@ const RenderContentfulRichText = (text, assets) => {
                                             <div 
                                                 className={classes.imageContainer}
                                             >
-                                                <img 
-                                                    className={classes.embeddedAsset}
-                                                    src={asset.fields.file.url}
-                                                    alt={asset.fields.title}
+                                                <Button
                                                     onClick={() => handleModalOpen(
-                                                        <div className={classes.modalImageContainer}>
-                                                            <img 
-                                                                className={classes.modalImage}
-                                                                src={asset.fields.file.url} 
-                                                                alt={asset.fields.title} 
-                                                            />
-                                                        </div>
-                                                    )}
-                                                />
+                                                            <div className={classes.modalImageContainer}>
+                                                                <img 
+                                                                    className={classes.modalImage}
+                                                                    src={asset.fields.file.url} 
+                                                                    alt={asset.fields.title} 
+                                                                />
+                                                            </div>
+                                                        )}
+                                                >
+                                                    <img 
+                                                        className={classes.embeddedAsset}
+                                                        src={asset.fields.file.url}
+                                                        alt={asset.fields.title}
+                                                    />
+                                                </Button>
                                             </div>
                                         </Grid>
                                         <Grid item sm={6} className={classes.subtitleContainer}>
