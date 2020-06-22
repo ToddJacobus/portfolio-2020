@@ -15,7 +15,9 @@ import ArrowRightSharpIcon from '@material-ui/icons/ArrowRightSharp';
 import RenderContentfulRichText from '../RTFRenderer';
 
 const useStyles = makeStyles(theme => ({
-    root: {},
+    root: {
+        marginTop: 100,
+    },
     listerRoot: {},
     titleContainer: {
         marginLeft: 10,
@@ -44,6 +46,10 @@ const useStyles = makeStyles(theme => ({
     },
     listerText: {
         fontFamily: "'Montserrat', sans-serif",
+    },
+    arrowRightSharpIcon: {
+        zIndex: 0,
+        color: '#3B8DBF',
     },
     heroImageContainer: {
         maxWidth: 400,
@@ -76,7 +82,9 @@ const Lister = props => {
                     items ? items.map((item, index) => {
                         return <ListItem>
                                     <ListItemIcon>
-                                        <ArrowRightSharpIcon />
+                                        <ArrowRightSharpIcon 
+                                            className={classes.arrowRightSharpIcon} 
+                                        />
                                     </ListItemIcon>
                                     <ListItemText
                                         className={classes.listerText} 
@@ -98,11 +106,13 @@ const Project = props => {
     const {
         item,
         linkedAssets,
+        setModalOpen,
+        setModalChildren,
     } = props;
 
     return (
         <div className={classes.root}>
-            <div className={classes.titleContainer}>
+            <div className={classes.titleContainer} name={item.id}>
                 <Typography
                     className={classes.title}
                     variant="h2"
@@ -129,7 +139,14 @@ const Project = props => {
             </div>
             
             <div className={classes.bodyContainer}>
-                {RenderContentfulRichText(item.body, linkedAssets)}
+                {
+                    RenderContentfulRichText(
+                        item.body, 
+                        linkedAssets,
+                        setModalOpen,
+                        setModalChildren,
+                    )
+                }
             </div>
         </div>
     )

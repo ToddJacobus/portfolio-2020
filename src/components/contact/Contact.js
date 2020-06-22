@@ -3,16 +3,20 @@ import React from 'react';
 import {
     makeStyles,
     Grid,
-    Button,
     Typography,
     List,
     ListItem,
     ListItemIcon,
     ListItemText,
+    Fab,
 } from '@material-ui/core';
+
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import HomeIcon from '@material-ui/icons/Home';
+
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -20,11 +24,29 @@ const useStyles = makeStyles(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+    homeActionButton: {
+        background: '#FCFCFC',
+        color: '#3B8DBF',
+        borderRadius: '10px 0px 0px 10px',
+        height: 65,
+        width: 65,
+        position: 'fixed',
+        right: 0,
+        top: 5,
+        boxShadow: theme.shadows[3],
+        zIndex: 3,
+    },
     leftPanel: {
         height: '100vh',
+        [theme.breakpoints.down('sm')]: {
+            height: 500,
+        },
     },
     rightPanel: {
         height: '100vh',
+        [theme.breakpoints.down('sm')]: {
+            height: 500,
+        },
     },
     contactBodyContainer: {
         width: '100%',
@@ -45,6 +67,7 @@ const useStyles = makeStyles(theme => ({
     },
     contactBodyTitle: {
         fontFamily: "'Montserrat', sans-serif",
+        textAlign: 'center',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
@@ -117,7 +140,15 @@ const Contact = props => {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={6}>
+            <Fab
+                size="small"
+                className={classes.homeActionButton}
+                component={Link}
+                to="/"
+            >
+                <HomeIcon />
+            </Fab>
+            <Grid container spacing={2}>
                 <Grid 
                     item sm={6}
                     className={classes.rightPanel}
