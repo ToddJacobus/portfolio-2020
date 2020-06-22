@@ -67,20 +67,20 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-const RenderContentfulRichText = (text, assets) => {
+const RenderContentfulRichText = (text, assets, setModalOpen, setModalChildren) => {
     const classes = useStyles();
 
-    const [modalOpen, setModalOpen] = React.useState(false);
-    const [modalChildren, setModalChildren] = React.useState();
+    // const [modalOpen, setModalOpen] = React.useState(false);
+    // const [modalChildren, setModalChildren] = React.useState();
 
     const handleModalOpen = children => {
         setModalOpen(true);
         setModalChildren(children)
     };
 
-    const handleModalClose = () => {
-        setModalOpen(false);
-    };
+    // const handleModalClose = () => {
+    //     setModalOpen(false);
+    // };
 
     
 
@@ -96,11 +96,11 @@ const RenderContentfulRichText = (text, assets) => {
                                 <div 
                                     className={classes.embeddedAssetContainer}
                                 >
-                                    <GenericModal
+                                    {/* <GenericModal
                                         children={modalChildren}
                                         open={modalOpen}
                                         handleModalClose={handleModalClose}
-                                    />
+                                    /> */}
                                     <Grid container spacing={6}>
                                         <Grid item sm={6}>
                                             <div 

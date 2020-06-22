@@ -109,6 +109,8 @@ const Projects = props => {
     const { 
         fetchProjects,
         projects_content,
+        setModalOpen,
+        setModalChildren,
      } = props;
 
     React.useEffect(() => {
@@ -153,6 +155,7 @@ const Projects = props => {
                                     item={item}
                                     linkedAssets={projects_content.linkedAssets} 
                                     key={item.id}
+                                    { ...props }
                                     />
                         })
                         : <div />

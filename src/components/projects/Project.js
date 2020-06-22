@@ -106,6 +106,8 @@ const Project = props => {
     const {
         item,
         linkedAssets,
+        setModalOpen,
+        setModalChildren,
     } = props;
 
     return (
@@ -137,7 +139,14 @@ const Project = props => {
             </div>
             
             <div className={classes.bodyContainer}>
-                {RenderContentfulRichText(item.body, linkedAssets)}
+                {
+                    RenderContentfulRichText(
+                        item.body, 
+                        linkedAssets,
+                        setModalOpen,
+                        setModalChildren,
+                    )
+                }
             </div>
         </div>
     )
