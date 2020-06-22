@@ -125,7 +125,16 @@ const ContactList = props => {
                 </ListItemIcon>
                 <ListItemText
                     className={classes.listItemText}
-                    primary="Todd Jacobus"
+                    // primary="Todd Jacobus"
+                    primary={
+                            <a 
+                                href="https://www.linkedin.com/in/connect-with-todd-jacobus"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Connect with Todd Jacobus
+                            </a>
+                        }
                     secondary="Find me on LinkedIn"
                 />
             </ListItem>
@@ -173,7 +182,7 @@ const Contact = props => {
                                 variant={'h4'}
                                 className={classes.contactBodyTitle}
                             >
-                                Seriously, let's collaborate
+                                Let's collaborate
                             </Typography>
                             <ContactList />
                         </div>
