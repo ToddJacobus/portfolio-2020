@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ReactMarkdown from 'react-markdown';
+
 import {
     makeStyles, 
     Typography, 
@@ -139,14 +141,15 @@ const Project = props => {
             </div>
             
             <div className={classes.bodyContainer}>
-                {
+                <ReactMarkdown source={item.bodyMarkdown}/>
+                {/* {
                     RenderContentfulRichText(
                         item.body, 
                         linkedAssets,
                         setModalOpen,
                         setModalChildren,
                     )
-                }
+                } */}
             </div>
         </div>
     )

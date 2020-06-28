@@ -11,6 +11,7 @@ export default (state = null, action) => {
                                 objectives: item.fields.objectives,
                                 techStack: item.fields.techStack,
                                 body: item.fields.body,
+                                bodyMarkdown: item.fields.bodyMarkdown,
                                 order: item.fields.order,
                                 heroImage: action.payload.includes && item.fields.heroImage ?
                                     action.payload.includes.Asset.find(
