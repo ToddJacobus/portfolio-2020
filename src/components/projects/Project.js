@@ -108,6 +108,7 @@ const Project = props => {
         linkedAssets,
         setModalOpen,
         setModalChildren,
+        code_blocks_content,
     } = props;
 
     return (
@@ -145,6 +146,7 @@ const Project = props => {
                         linkedAssets,
                         setModalOpen,
                         setModalChildren,
+                        code_blocks_content,
                     )
                 }
             </div>
