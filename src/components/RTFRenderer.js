@@ -67,6 +67,11 @@ const useStyles = makeStyles(theme => ({
         borderRadius: 5,
         boxShadow: '0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19)',
     },
+    highlightContainer: {
+        width: '100%',
+        marginLeft: 15,
+        marginRight: 15,
+    },
 }))
 
 const RenderContentfulRichText = (
@@ -130,13 +135,16 @@ const RenderContentfulRichText = (
                 //      id, since I have that.
                 // node.data.target.sys.id
                 return (
-                    <Highlight>
-                        {
-                            code_blocks_content ? 
-                            code_blocks_content.items.find(item => item.id === node.data.target.sys.id).codeBlock
-                            : ""
-                        }
-                    </Highlight>
+                    <div className={classes.highlightContainer}>
+                        <Highlight>
+                            {
+                                code_blocks_content ? 
+                                code_blocks_content.items.find(item => item.id === node.data.target.sys.id).codeBlock
+                                : ""
+                            }
+                        </Highlight>    
+                    </div>
+                    
                 )
                 
             },
