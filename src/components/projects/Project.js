@@ -80,7 +80,7 @@ const Lister = props => {
             <List>
                 {
                     items ? items.map((item, index) => {
-                        return <ListItem>
+                        return <ListItem key={item.id}>
                                     <ListItemIcon>
                                         <ArrowRightSharpIcon 
                                             className={classes.arrowRightSharpIcon} 
@@ -106,6 +106,9 @@ const Project = props => {
     const {
         item,
         linkedAssets,
+        setModalOpen,
+        setModalChildren,
+        code_blocks_content,
     } = props;
 
     return (
@@ -137,7 +140,15 @@ const Project = props => {
             </div>
             
             <div className={classes.bodyContainer}>
-                {RenderContentfulRichText(item.body, linkedAssets)}
+                {
+                    RenderContentfulRichText(
+                        item.body, 
+                        linkedAssets,
+                        setModalOpen,
+                        setModalChildren,
+                        code_blocks_content,
+                    )
+                }
             </div>
         </div>
     )

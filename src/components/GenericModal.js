@@ -26,7 +26,7 @@ const GenericModal = props => {
     const { 
         children,
         open,
-        handleModalClose,
+        setModalOpen,
     } = props;
 
 
@@ -37,7 +37,7 @@ const GenericModal = props => {
                 aria-describedby="generic-modal-description"
                 className={classes.modal}
                 open={open}
-                onClose={handleModalClose}
+                onClose={() => setModalOpen(false)}
                 closeAfterTransition
                 BackdropComponent={Backdrop}
                 BackdropProps={{
