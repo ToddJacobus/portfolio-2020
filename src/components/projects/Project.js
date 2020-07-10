@@ -80,7 +80,7 @@ const Lister = props => {
             <List>
                 {
                     items ? items.map((item, index) => {
-                        return <ListItem>
+                        return <ListItem key={item.id}>
                                     <ListItemIcon>
                                         <ArrowRightSharpIcon 
                                             className={classes.arrowRightSharpIcon} 
@@ -108,6 +108,7 @@ const Project = props => {
         linkedAssets,
         setModalOpen,
         setModalChildren,
+        code_blocks_content,
     } = props;
 
     return (
@@ -145,6 +146,7 @@ const Project = props => {
                         linkedAssets,
                         setModalOpen,
                         setModalChildren,
+                        code_blocks_content,
                     )
                 }
             </div>

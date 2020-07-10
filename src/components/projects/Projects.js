@@ -20,7 +20,8 @@ import { Link } from 'react-router-dom';
 import { Link as ReactScrollLink } from 'react-scroll';
 
 import {
-    fetchProjects,
+    fetchProjects, 
+    fetchCodeBlocks,
 } from '../../actions';
 
 import Project from './Project';
@@ -108,14 +109,17 @@ const Projects = props => {
 
     const { 
         fetchProjects,
+        fetchCodeBlocks,
         projects_content,
         setModalOpen,
         setModalChildren,
+        // code_blocks_content,
      } = props;
 
     React.useEffect(() => {
         fetchProjects();
-    }, [fetchProjects])
+        fetchCodeBlocks();
+    }, [fetchProjects, fetchCodeBlocks])
 
     return (
         <div>
@@ -168,6 +172,7 @@ const Projects = props => {
 const mapStateToProps = state => {
     return {
         projects_content: state.projects_content,
+        code_blocks_content: state.code_blocks_content,
     }
 }
 
@@ -175,5 +180,6 @@ export default connect(
     mapStateToProps,
     {
         fetchProjects,
+        fetchCodeBlocks,
     }
 )(Projects);
