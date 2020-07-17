@@ -142,13 +142,13 @@ const HeroPage = props => {
                     >
                         Projects
                     </Button>
-                    <hr></hr>
+                    {/* <hr></hr>
                     <Button
                         href="https://gitlab.com/ToddJacobus"
                         target="_blank"
                     >
                         GitLab
-                    </Button>
+                    </Button> */}
                     <hr></hr>
                     <Button
                         href="https://github.com/ToddJacobus"
