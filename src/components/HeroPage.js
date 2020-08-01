@@ -138,23 +138,16 @@ const HeroPage = props => {
                 <div className={classes.navbar}>
                     <Button
                         component={Link}
-                        to="/projects"
+                        to="/services"
                     >
-                        Projects
+                        Services
                     </Button>
-                    {/* <hr></hr>
-                    <Button
-                        href="https://gitlab.com/ToddJacobus"
-                        target="_blank"
-                    >
-                        GitLab
-                    </Button> */}
                     <hr></hr>
                     <Button
-                        href="https://github.com/ToddJacobus"
-                        target="_blank"
+                        component={Link}
+                        to="/projects"
                     >
-                        GitHub
+                        Past Work
                     </Button>
                     <hr></hr>
                     <Button

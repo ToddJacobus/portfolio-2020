@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 import HeroPage from './components/HeroPage';
+import Services from './components/services/Services';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import GenericModal from './components/GenericModal';
@@ -58,6 +59,9 @@ class App extends Component {
                   setModalOpen={this.setModalOpen}
                   setModalChildren={this.setModalChildren}
                 />
+              </Route>
+              <Route path="/services">
+                  <Services />
               </Route>
               <Route path="/">
                 <HeroPage />
