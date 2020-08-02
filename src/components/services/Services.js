@@ -16,7 +16,11 @@ import Service from './Service';
 import { fetchServices } from '../../actions';
 
 const useStyles = makeStyles(theme => ({
-    root: {},
+    root: {
+        maxWidth: 1200,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
     titleContainer: {
         width: "100%",
         height: '33vh',

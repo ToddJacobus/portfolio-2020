@@ -48,6 +48,9 @@ const Service = props => {
             height: '100vh',
             flexGrow: 1,
         },
+        imageGridItem: {
+            width: '100%',
+        },
         imageContainer: {
             height: '100%',
             textAlign: 'center',
@@ -94,7 +97,7 @@ const Service = props => {
                 index % 2 === 0 ? "row" : "row-reverse"
             } 
         >
-            <Grid item sm={6}>
+            <Grid item sm={6} className={classes.imageGridItem}>
                 <div className={classes.imageContainer}>
                     <img src={image} alt={title} className={classes.image} />
                 </div>
