@@ -25,6 +25,7 @@ import {
 
 const Service = props => {
     const { 
+        index,
         id,
         title,
         tagline,
@@ -44,20 +45,34 @@ const Service = props => {
 
     const useStyles = makeStyles(theme => ({
         root: {
-            // width: "100%",
+            height: '100vh',
             flexGrow: 1,
         },
         imageContainer: {
-            height: 300,
+            height: '100%',
             textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+        },
+        image: {
+            width: 300,
+            height: 300,
+            marginLeft: 'auto',
+            marginRight: 'auto',
             ...noImageStyle,
         },
-        image: {},
         descriptionContainer: {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             height: '100%',
+        },
+        tagline: {
+            textAlign: 'left',
+            marginLeft: 50,
+            marginRight: 50,
+            marginBottom: 50,
         },
         description: {
             textAlign: 'justify',
@@ -71,7 +86,14 @@ const Service = props => {
     
 
     return (
-        <Grid container spacing={1} className={classes.root}>
+        <Grid 
+            container 
+            spacing={1} 
+            className={classes.root}
+            direction={
+                index % 2 === 0 ? "row" : "row-reverse"
+            } 
+        >
             <Grid item sm={6}>
                 <div className={classes.imageContainer}>
                     <img src={image} alt={title} className={classes.image} />
@@ -79,7 +101,10 @@ const Service = props => {
             </Grid>
             <Grid item sm={6}>
                 <div className={classes.descriptionContainer}>
-                    <Typography variant="h6" className={classes.description} >
+                    <Typography variant="h4" className={classes.tagline}>
+                        { tagline }
+                    </Typography>
+                    <Typography variant="subtitle1" className={classes.description} >
                         { description }
                     </Typography>
                 </div>
