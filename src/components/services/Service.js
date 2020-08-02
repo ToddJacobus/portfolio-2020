@@ -63,7 +63,6 @@ const Service = props => {
             textAlign: 'justify',
             marginLeft: 50,
             marginRight: 50,
-
         },
     }));
 

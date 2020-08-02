@@ -69,7 +69,6 @@ const useStyles = makeStyles(theme => ({
         right: 5,
         marginRight: 20,
         marginLeft: 'auto',
-        fontFamily: "'Dosis', sans-serif",
         [theme.breakpoints.down('sm')]: {
             fontSize: 60,
             marginRight: 5,
@@ -81,7 +80,6 @@ const useStyles = makeStyles(theme => ({
         right: 5,
         marginRight: 20,
         marginLeft: 'auto',
-        fontFamily: "'Montserrat', sans-serif",
         textAlign: 'justify',
         maxWidth: 400,
         [theme.breakpoints.down('sm')]: {
