@@ -13,7 +13,7 @@ import {
 
 
 import Service from './Service';
-import fetchServices from '../../actions';
+import { fetchServices } from '../../actions';
 
 const useStyles = makeStyles(theme => ({
     root: {},
@@ -23,25 +23,24 @@ const useStyles = makeStyles(theme => ({
 const Services = props => {
     const classes = useStyles();
 
+    const {
+        services_content,
+        fetchServices,
+    } = props;
+
     React.useEffect(() => {
         fetchServices();
-    }, []);
+    }, [fetchServices])
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={4}>
-                <Grid Item xs={4}>
-                    <div>Web Design and Development</div>
-                </Grid>
-                <Grid Item xs={4}>
-                    <div>Backend API Development</div>
-                </Grid>
-                <Grid Item xs={4}>
-                    <div>Cartography and GIS</div>
-                </Grid>
-                
-
-            </Grid>
+            {
+                services_content ?
+                services_content.items.map( (item, index) => {
+                    return <Service { ...item } index={index} key={item.id} />
+                })
+                : <div />
+            }
         </div>
     )
 };

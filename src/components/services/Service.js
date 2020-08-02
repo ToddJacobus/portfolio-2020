@@ -15,7 +15,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Service = props => {
-    classes = useStyles();
+    const classes = useStyles();
+
+    const { item } = props;
 
     return (
         <Grid Container spacing={4}>
