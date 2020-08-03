@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import {
-    Grid,
     Typography,
+    Fab,
     makeStyles,
 } from '@material-ui/core';
+
+import HomeIcon from '@material-ui/icons/Home';
 
 import {
     Link,
@@ -20,6 +22,18 @@ const useStyles = makeStyles(theme => ({
         maxWidth: 1200,
         marginLeft: 'auto',
         marginRight: 'auto',
+    },
+    homeActionButton: {
+        background: '#FCFCFC',
+        color: '#3B8DBF',
+        borderRadius: '10px 0px 0px 10px',
+        height: 65,
+        width: 65,
+        position: 'fixed',
+        right: 0,
+        top: 5,
+        boxShadow: theme.shadows[3],
+        zIndex: 3,
     },
     titleContainer: {
         width: "100%",
@@ -50,6 +64,14 @@ const Services = props => {
 
     return (
         <div className={classes.root}>
+            <Fab
+                size="small"
+                className={classes.homeActionButton}
+                component={Link}
+                to="/"
+            >
+                <HomeIcon />
+            </Fab>
             <div className={classes.titleContainer}>
                 <Typography variant="h2" className={classes.title} >
                     What I can do
