@@ -41,6 +41,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        marginBottom: 50,
     },
     title: {
         textAlign: 'center',

@@ -6,32 +6,13 @@ import {
     makeStyles,
 } from '@material-ui/core';
 
-import {
-    Link,
-} from 'react-router-dom';
-
-// const useStyles = makeStyles(theme => ({
-//     root: {
-//         width: "100%",
-//     },
-//     imageContainer: {
-//         height: 300,
-//         border: 
-//     },
-//     image: {},
-//     descriptionContainer: {},
-//     description: {},
-// }));
-
 const Service = props => {
     const { 
         index,
-        id,
         title,
         tagline,
         description,
         image,
-        order,
      } = props;
 
     // Control placeholder for image if there's nothing there
@@ -43,10 +24,13 @@ const Service = props => {
         })
     }, [image])
 
+    const isHighlighted = index % 2 === 0 ? true : false
+
     const useStyles = makeStyles(theme => ({
         root: {
             height: '100vh',
             flexGrow: 1,
+            backgroundColor: isHighlighted ? '#89BAD9' : undefined,
         },
         imageGridItem: {
             width: '100%',
@@ -76,11 +60,13 @@ const Service = props => {
             marginLeft: 50,
             marginRight: 50,
             marginBottom: 50,
+            color: isHighlighted ? "white" : undefined
         },
         description: {
             textAlign: 'justify',
             marginLeft: 50,
             marginRight: 50,
+            color: isHighlighted ? "white" : undefined
         },
     }));
 
