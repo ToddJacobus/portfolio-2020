@@ -17,6 +17,10 @@ import Highlight from 'react-highlight.js';
 import GenericModal from '../components/GenericModal';
 
 const useStyles = makeStyles(theme => ({
+    bodyHeading: {
+        marginTop: 60,
+        marginBottom: 20,
+    },
     embeddedAssetContainer: {
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -122,9 +126,18 @@ const RenderContentfulRichText = (
         }
         },
         renderNode: {
-            // [BLOCKS.PARAGRAPH]: (node, children) => {
-
-            // },
+            [BLOCKS.PARAGRAPH]: (node, children) => {
+                return <Typography>{children}</Typography>
+            },
+            [BLOCKS.HEADING_1]: (node, children) => {
+                return <Typography variant="h1" className={classes.bodyHeading}>{children}</Typography>
+            },
+            [BLOCKS.HEADING_2]: (node, children) => {
+                return <Typography variant="h2" className={classes.bodyHeading}>{children}</Typography>
+            },
+            [BLOCKS.HEADING_3]: (node, children) => {
+                return <Typography variant="h3" className={classes.bodyHeading}>{children}</Typography>
+            },
             [BLOCKS.EMBEDDED_ENTRY]: node => {
                 // const { title, codeBlock} = node.data.target.fields;
                 // console.log(title, codeBlock)
@@ -160,11 +173,6 @@ const RenderContentfulRichText = (
                                 <div 
                                     className={classes.embeddedAssetContainer}
                                 >
-                                    {/* <GenericModal
-                                        children={modalChildren}
-                                        open={modalOpen}
-                                        handleModalClose={handleModalClose}
-                                    /> */}
                                     <Grid container spacing={6}>
                                         <Grid item sm={6}>
                                             <div 
