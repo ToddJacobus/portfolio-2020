@@ -21,6 +21,10 @@ const useStyles = makeStyles(theme => ({
         marginTop: 60,
         marginBottom: 20,
     },
+    bodyParagraph: {
+        marginTop: 10,
+        marginBottom: 10,
+    },
     embeddedAssetContainer: {
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -105,15 +109,6 @@ const RenderContentfulRichText = (
     }, [])
 
     const richTextOptions = {
-        // renderText: text => {
-        //     return text.split('\n').reduce((children, textSegment, index) => {
-        //         return [...children, index > 0 && <br key={index} />, textSegment];
-        //     }, []);
-        // },
-        // [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-        //     const { title, description } = node.data.target.fields;
-        //     return <CustomComponent title={title} description={description} />
-        //   }
         renderMark: {
             [MARKS.CODE]: text => {
                 return (
@@ -127,7 +122,7 @@ const RenderContentfulRichText = (
         },
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => {
-                return <Typography>{children}</Typography>
+                return <Typography className={classes.bodyParagraph}>{children}</Typography>
             },
             [BLOCKS.HEADING_1]: (node, children) => {
                 return <Typography variant="h1" className={classes.bodyHeading}>{children}</Typography>
