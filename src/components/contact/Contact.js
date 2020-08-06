@@ -9,6 +9,7 @@ import {
     ListItemIcon,
     ListItemText,
     Fab,
+    Button,
 } from '@material-ui/core';
 
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
@@ -17,6 +18,8 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import HomeIcon from '@material-ui/icons/Home';
 
 import { Link } from 'react-router-dom';
+
+import ContactForm from './ContactForm';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -145,7 +148,18 @@ const ContactList = props => {
 
 const Contact = props => {
     const classes = useStyles();
-    const {} = props;
+    const { 
+        setModalChildren,
+        setModalOpen,
+        modalOpen,
+     } = props;
+
+    const handleButtonClick = e => {
+        setModalChildren(
+            <ContactForm />
+        )
+        modalOpen ? setModalOpen(false) : setModalOpen( true )
+    }
 
     return (
         <div className={classes.root}>
@@ -184,6 +198,11 @@ const Contact = props => {
                             >
                                 Let's collaborate
                             </Typography>
+                            <Button
+                                onClick={e => handleButtonClick(e)}
+                            >
+                                Let's Chat
+                            </Button>
                             <ContactList />
                         </div>
                     </div>
