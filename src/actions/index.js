@@ -13,3 +13,8 @@ export const fetchCodeBlocks = props => async dispatch => {
     const response = await getContent.get(`?access_token=${API_TOKEN}&content_type=codeBlock`)
     dispatch({type: 'GET_CODE_BLOCKS', payload: response.data})
 }
+
+export const fetchServices = props => async dispatch => {
+    const response = await getContent.get(`?access_token=${API_TOKEN}&content_type=service`)
+    dispatch({type: 'GET_SERVICES', payload: response.data})
+}

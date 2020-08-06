@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import {
   BrowserRouter as Router,
@@ -9,14 +9,29 @@ import {
 } from 'react-router-dom';
 
 import HeroPage from './components/HeroPage';
+import Services from './components/services/Services';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
 import GenericModal from './components/GenericModal';
 
-const styles = {
-  root: {
-  }
-}
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      '"Montserrat"',
+      'sans-serif',
+    ].join(','),
+    h1: {
+      fontFamily: "'Dosis', sans-serif",
+    },
+    h2: {
+      fontFamily: "'Dosis', sans-serif",
+    },
+    h3: {
+      fontFamily: "'Dosis', sans-serif",
+    },
+  },
+});
 
 class App extends Component {
   constructor(props) {
@@ -48,7 +63,7 @@ class App extends Component {
           setModalOpen={this.setModalOpen}
         />
         <Router>
-          <div className={this.props.classes.root}>
+          <div>
             <Switch>
               <Route path="/contact">
                 <Contact />
@@ -58,6 +73,9 @@ class App extends Component {
                   setModalOpen={this.setModalOpen}
                   setModalChildren={this.setModalChildren}
                 />
+              </Route>
+              <Route path="/services">
+                  <Services />
               </Route>
               <Route path="/">
                 <HeroPage />
@@ -72,4 +90,12 @@ class App extends Component {
   
 }
 
-export default withStyles(styles)(App);
+export default function CustomStyles() {
+  return (
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  )
+}
+
+// export default withStyles(styles)(App);
