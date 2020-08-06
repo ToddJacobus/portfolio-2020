@@ -84,11 +84,11 @@ const DrawerList = props => {
                             >
                                 <ListItemText 
                                     primary={item.title}
-                                    secondary={
-                                        `${item.techStack.items.map(
-                                                item => item.primary
-                                            ).join(', ')}`
-                                        }
+                                    // secondary={
+                                    //     `${item.techStack.items.map(
+                                    //             item => item.primary
+                                    //         ).join(', ')}`
+                                    //     }
                                 />
                             </ListItem>
                 })
