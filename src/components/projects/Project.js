@@ -25,12 +25,9 @@ const useStyles = makeStyles(theme => ({
         maxWidth: 800,
 
     },
-    title: {
-        fontFamily: "'Dosis', sans-serif",
-    },
+    title: {},
     bodyContainer: {
         marginTop: 10,
-        fontFamily: "'Montserrat', sans-serif",
         maxWidth: 800,
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -44,9 +41,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: 100,
         marginBottom: 100,
     },
-    listerText: {
-        fontFamily: "'Montserrat', sans-serif",
-    },
+    listerText: {},
     arrowRightSharpIcon: {
         zIndex: 0,
         color: '#3B8DBF',
@@ -80,7 +75,7 @@ const Lister = props => {
             <List>
                 {
                     items ? items.map((item, index) => {
-                        return <ListItem>
+                        return <ListItem key={item.id}>
                                     <ListItemIcon>
                                         <ArrowRightSharpIcon 
                                             className={classes.arrowRightSharpIcon} 
@@ -108,6 +103,7 @@ const Project = props => {
         linkedAssets,
         setModalOpen,
         setModalChildren,
+        code_blocks_content,
     } = props;
 
     return (
@@ -124,7 +120,7 @@ const Project = props => {
                 <Grid container spacing={0}>
                     <Grid item sm={6}>
                         <Lister {...item.objectives} />
-                        <Lister {...item.techStack} />
+                        {/* <Lister {...item.techStack} /> */}
                     </Grid>
                     <Grid item sm={6}>
                         <div className={classes.heroImageContainer}>
@@ -145,6 +141,7 @@ const Project = props => {
                         linkedAssets,
                         setModalOpen,
                         setModalChildren,
+                        code_blocks_content,
                     )
                 }
             </div>

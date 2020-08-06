@@ -69,7 +69,6 @@ const useStyles = makeStyles(theme => ({
         right: 5,
         marginRight: 20,
         marginLeft: 'auto',
-        fontFamily: "'Dosis', sans-serif",
         [theme.breakpoints.down('sm')]: {
             fontSize: 60,
             marginRight: 5,
@@ -81,7 +80,6 @@ const useStyles = makeStyles(theme => ({
         right: 5,
         marginRight: 20,
         marginLeft: 'auto',
-        fontFamily: "'Montserrat', sans-serif",
         textAlign: 'justify',
         maxWidth: 400,
         [theme.breakpoints.down('sm')]: {
@@ -138,23 +136,16 @@ const HeroPage = props => {
                 <div className={classes.navbar}>
                     <Button
                         component={Link}
+                        to="/services"
+                    >
+                        Services
+                    </Button>
+                    <hr></hr>
+                    <Button
+                        component={Link}
                         to="/projects"
                     >
-                        Projects
-                    </Button>
-                    <hr></hr>
-                    <Button
-                        href="https://gitlab.com/ToddJacobus"
-                        target="_blank"
-                    >
-                        GitLab
-                    </Button>
-                    <hr></hr>
-                    <Button
-                        href="https://github.com/ToddJacobus"
-                        target="_blank"
-                    >
-                        GitHub
+                        Past Work
                     </Button>
                     <hr></hr>
                     <Button
