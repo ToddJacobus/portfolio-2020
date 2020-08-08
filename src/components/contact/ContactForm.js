@@ -1,9 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
-    makeStyles, FormControl, InputLabel, Input, FormHelperText, TextField, Button,
-
+    makeStyles, 
+    FormControl, 
+    InputLabel, 
+    Input, 
+    FormHelperText, 
+    TextField, 
+    Button,
 } from '@material-ui/core';
+
+import {
+    sendContact,
+} from '../../actions';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -34,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const ContactForm = props => {
-    const {} = props;
+    const { sendContact } = props;
     const classes = useStyles();
 
     const [email, setEmail] = React.useState();
@@ -45,8 +55,12 @@ const ContactForm = props => {
         e.preventDefault()
 
         console.log(e)
+        sendContact({
+            email,
+            name,
+            comments,
+        })
     };
-
 
     return (
         <div className={classes.root}>
@@ -94,4 +108,15 @@ const ContactForm = props => {
     )
 };
 
-export default ContactForm;
+const mapStateToProps = state => {
+    return {
+        contacts_response: state.contacts_response,
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {
+        sendContact,
+    }
+)(ContactForm);
