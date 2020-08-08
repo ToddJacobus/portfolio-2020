@@ -54,12 +54,11 @@ const ContactForm = props => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        console.log(e)
-        sendContact({
+        sendContact({data: {
             email,
             name,
             comments,
-        })
+        }})
     };
 
     return (
