@@ -37,26 +37,46 @@ const ContactForm = props => {
     const {} = props;
     const classes = useStyles();
 
+    const [email, setEmail] = React.useState();
+    const [name, setName] = React.useState();
+    const [comments, setComments] = React.useState();
+
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        console.log(e)
+    };
+
+
     return (
         <div className={classes.root}>
-            <form className={classes.formRoot} >
+            <form onSubmit={e => handleSubmit(e)} className={classes.formRoot} >
                 <FormControl required className={classes.formControl} >
                     <InputLabel htmlFor="email-input" >Email Address</InputLabel>
-                    <Input id="email-input" aria-describedby="email-helper-text" />
+                    <Input 
+                        id="email-input" 
+                        aria-describedby="email-helper-text" 
+                        onChange={e => setEmail(e.target.value)}
+                    />
                     <FormHelperText id="email-helper-text" >
                         I'll never share your email
                     </FormHelperText>
                 </FormControl>
 
                 <FormControl className={classes.formControl}>
-                    <InputLabel htmlFor="email-input" >Name</InputLabel>
-                    <Input id="name-input" aria-describedby="name-helper-text" />
+                    <InputLabel htmlFor="name-input" >Name</InputLabel>
+                    <Input 
+                        id="name-input" 
+                        aria-describedby="name-helper-text" 
+                        onChange={e => setName(e.target.value)}
+                    />
                 </FormControl>
                 <div className={classes.textFieldContainer}>
                     <TextField 
                         id="comments-field"
                         label="How can I help?"
                         multiline
+                        onChange={e => setComments(e.target.value)}
                     />    
                 </div>
                 <div className={classes.buttonContainer}>
@@ -64,6 +84,7 @@ const ContactForm = props => {
                         variant="outlined"
                         color="primary"
                         className={classes.button}
+                        type="submit"
                     >
                         Submit
                     </Button>
