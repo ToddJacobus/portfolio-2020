@@ -11,8 +11,8 @@ import {
     Fab,
     Button,
 } from '@material-ui/core';
+import { Link as MuiLink } from '@material-ui/core';
 
-import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import HomeIcon from '@material-ui/icons/Home';
@@ -107,48 +107,62 @@ const ContactList = props => {
     const {} = props;
 
     return (
-        <List className={classes.listRoot}>
-            <ListItem>
-                <ListItemIcon>
-                    <AlternateEmailIcon />
-                </ListItemIcon>
-                <ListItemText 
-                    className={classes.listItemText}
-                    primary="rtjacobus1@gmail.com"
-                    secondary="Shoot me an email"
-                />
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <TwitterIcon />
-                </ListItemIcon>
-                <ListItemText
-                    className={classes.listItemText}
-                    primary="@jacobus_todd"
-                    secondary="Tweet me a tweet"
-                />
-            </ListItem>
-            <ListItem>
-                <ListItemIcon>
-                    <LinkedInIcon />
-                </ListItemIcon>
-                <ListItemText
-                    className={classes.listItemText}
-                    // primary="Todd Jacobus"
-                    primary={
-                            <a 
-                                href="https://www.linkedin.com/in/connect-with-todd-jacobus"
+        <div className={classes.listRoot}>
+            <Typography variant="h6">
+                You can also find my on socail media
+            </Typography>
+            <List>
+                {/* <ListItem>
+                    <ListItemIcon>
+                        <AlternateEmailIcon />
+                    </ListItemIcon>
+                    <ListItemText 
+                        className={classes.listItemText}
+                        primary="rtjacobus1@gmail.com"
+                        secondary="Shoot me an email"
+                    />
+                </ListItem> */}
+                <ListItem>
+                    <ListItemIcon>
+                        <TwitterIcon />
+                    </ListItemIcon>
+                    <ListItemText
+                        className={classes.listItemText}
+                        // primary="@jacobus_todd"
+                        primary={
+                            <MuiLink
+                                href="https://twitter.com/jacobus_todd"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Connect with Todd Jacobus
-                            </a>
+                                @jacobus_todd   
+                            </MuiLink>
                         }
-                    secondary="Find me on LinkedIn"
-                />
-            </ListItem>
+                        secondary="Tweet me a tweet"
+                    />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <LinkedInIcon />
+                    </ListItemIcon>
+                    <ListItemText
+                        className={classes.listItemText}
+                        primary={
+                                <MuiLink 
+                                    href="https://www.linkedin.com/in/connect-with-todd-jacobus"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Todd Jacobus
+                                </MuiLink>
+                            }
+                        secondary="Connect with me on LinkedIn"
+                    />
+                </ListItem>
 
-        </List>
+            </List>    
+        </div>
+        
     )
 }
 
