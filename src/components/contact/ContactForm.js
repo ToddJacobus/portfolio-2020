@@ -9,6 +9,7 @@ import {
     FormHelperText, 
     TextField, 
     Button,
+    Typography,
 } from '@material-ui/core';
 
 import {
@@ -94,7 +95,7 @@ const ContactForm = props => {
                 </div>
                 <div className={classes.buttonContainer}>
                     <Button
-                        variant="outlined"
+                        variant="contained"
                         color="primary"
                         className={classes.button}
                         type="submit"

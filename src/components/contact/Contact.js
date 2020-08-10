@@ -69,8 +69,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'space-around',
     },
     contactBodyTitle: {
-        fontFamily: "'Montserrat', sans-serif",
-        textAlign: 'center',
+        textAlign: 'justify',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
@@ -93,6 +92,13 @@ const useStyles = makeStyles(theme => ({
     },
     listItemText: {
         fontFamily: "'Montserrat', sans-serif",
+    },
+    chatButtonContainer: {
+        width: '100%',
+        textAlign: 'center',
+    },
+    chatButton: {
+        // width: 50,
     },
 }));
 
@@ -193,16 +199,24 @@ const Contact = props => {
                             className={classes.contactBody}
                         >
                             <Typography 
-                                variant={'h4'}
+                                variant={'h6'}
                                 className={classes.contactBodyTitle}
                             >
-                                Let's collaborate
+                                Let's work together to reduce barriers 
+                                between your products, services and 
+                                those who need them.
                             </Typography>
-                            <Button
-                                onClick={e => handleButtonClick(e)}
-                            >
-                                Let's Chat
-                            </Button>
+                            <div className={classes.chatButtonContainer}>
+                                <Button
+                                    onClick={e => handleButtonClick(e)}
+                                    classname={classes.chatButton}
+                                    color="primary"
+                                    variant="contained"
+                                >
+                                    Let's Chat
+                                </Button>
+                            </div>
+                            
                             <ContactList />
                         </div>
                     </div>
