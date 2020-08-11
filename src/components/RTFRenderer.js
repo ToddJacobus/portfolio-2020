@@ -134,16 +134,6 @@ const RenderContentfulRichText = (
                 return <Typography variant="h3" className={classes.bodyHeading}>{children}</Typography>
             },
             [BLOCKS.EMBEDDED_ENTRY]: node => {
-                // const { title, codeBlock} = node.data.target.fields;
-                // console.log(title, codeBlock)
-                // return <Highlight>{codeBlock}</Highlight>
-                // NOTE:
-                //      the node.data.target.fields attribute is empty 
-                //      for some reason.  The only workaround I see is
-                //      to create a action/reducer to collect these
-                //      entrires and render the right one, filtered by
-                //      id, since I have that.
-                // node.data.target.sys.id
                 return (
                     <div className={classes.highlightContainer}>
                         <Highlight>

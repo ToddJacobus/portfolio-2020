@@ -66,7 +66,11 @@ class App extends Component {
           <div>
             <Switch>
               <Route path="/contact">
-                <Contact />
+                <Contact 
+                  setModalChildren={this.setModalChildren}
+                  setModalOpen={this.setModalOpen}
+                  modalOpen={this.state.modalOpen}
+                />
               </Route>
               <Route path="/projects">
                 <Projects 
