@@ -84,11 +84,6 @@ const DrawerList = props => {
                             >
                                 <ListItemText 
                                     primary={item.title}
-                                    // secondary={
-                                    //     `${item.techStack.items.map(
-                                    //             item => item.primary
-                                    //         ).join(', ')}`
-                                    //     }
                                 />
                             </ListItem>
                 })
@@ -111,9 +106,6 @@ const Projects = props => {
         fetchProjects,
         fetchCodeBlocks,
         projects_content,
-        setModalOpen,
-        setModalChildren,
-        // code_blocks_content,
      } = props;
 
     React.useEffect(() => {
