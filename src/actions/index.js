@@ -23,10 +23,6 @@ export const fetchServices = props => async dispatch => {
 //  --  DATA POST ACTIONS
 export const sendContact = props => async dispatch => {
     const { data } = props;
-    console.log(data)
-
     const response = await contacts.post('contact/contacts/', data)
-
-    console.log(response)
     dispatch({type: 'POST_CONTACT', payload: response.data})
 }

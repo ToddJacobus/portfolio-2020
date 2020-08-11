@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import ReCAPTCHA from 'react-google-recaptcha';
+
 import {
     makeStyles, 
     FormControl, 
@@ -44,6 +46,8 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
+const recaptchaRef = React.createRef();
+
 const ContactForm = props => {
     const { sendContact } = props;
     const classes = useStyles();
@@ -51,15 +55,21 @@ const ContactForm = props => {
     const [email, setEmail] = React.useState();
     const [name, setName] = React.useState();
     const [comments, setComments] = React.useState();
+    const [captchaResponse, setCaptchaResponse] = React.useState();
 
     const handleSubmit = e => {
         e.preventDefault()
-
+        recaptchaRef.current.execute();
         sendContact({data: {
             email,
             name,
             comments,
+            captchaResponse,
         }})
+    };
+
+    const handleCaptchaChange = response => {
+        setCaptchaResponse(response);
     };
 
     return (
@@ -103,6 +113,12 @@ const ContactForm = props => {
                         Submit
                     </Button>
                 </div>
+                <ReCAPTCHA 
+                    ref={recaptchaRef}
+                    size="invisible"
+                    sitekey="6Lc_q70ZAAAAANxJqRn5qk44PGoppd9Eh4WWkOCA"
+                    onChange={handleCaptchaChange}
+                />
             </form>
         </div>
     )
