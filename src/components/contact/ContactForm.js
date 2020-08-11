@@ -58,6 +58,14 @@ const useStyles = makeStyles(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+    thanksImageContainer: {
+        width: 100,
+        height: 100,
+        border: '1px dashed red',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: 20,
+    },
 }))
 
 const recaptchaRef = React.createRef();
@@ -70,6 +78,9 @@ const Thanks = props => {
                 Thanks for reaching out! I will get back to you soon via
                  email.
             </Typography>
+            <div className={classes.thanksImageContainer}>
+                {/* image here */}
+            </div>
         </div>
     )
 };
