@@ -55,21 +55,22 @@ const ContactForm = props => {
     const [email, setEmail] = React.useState();
     const [name, setName] = React.useState();
     const [comments, setComments] = React.useState();
-    const [captchaResponse, setCaptchaResponse] = React.useState();
 
     const handleSubmit = e => {
         e.preventDefault()
+        console.log("form submitted....")
+
         recaptchaRef.current.execute();
+
         sendContact({data: {
             email,
             name,
             comments,
-            captchaResponse,
         }})
     };
 
-    const handleCaptchaChange = response => {
-        setCaptchaResponse(response);
+    const handleCaptchaChange = captchaResponse => {
+        console.log("captcha response", captchaResponse)
     };
 
     return (
