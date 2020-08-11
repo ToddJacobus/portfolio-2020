@@ -179,7 +179,10 @@ const Contact = props => {
 
     const handleButtonClick = e => {
         setModalChildren(
-            <ContactForm />
+            <ContactForm 
+                setModalOpen={setModalOpen} 
+                setModalChildren={setModalChildren}
+            />
         )
         modalOpen ? setModalOpen(false) : setModalOpen( true )
     }

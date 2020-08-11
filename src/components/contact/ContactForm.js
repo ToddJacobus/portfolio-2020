@@ -44,12 +44,42 @@ const useStyles = makeStyles(theme => ({
     button: {
         marginTop: 100,
     },
+    thanksContainer: {
+        height: 250,
+        width: 250,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        textAlign: 'justify',
+        backgroundColor: 'white',
+    },
+    thanks: {
+        width: 200,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
 }))
 
 const recaptchaRef = React.createRef();
 
+const Thanks = props => {
+    const classes = useStyles();
+    return (
+        <div className={classes.thanksContainer}>
+            <Typography className={classes.thanks}>
+                Thanks for reaching out! I will get back to you soon via
+                 email.
+            </Typography>
+        </div>
+    )
+};
+
 const ContactForm = props => {
-    const { sendContact } = props;
+    const { 
+        sendContact,
+        setModalOpen,
+        setModalChildren,
+    } = props;
     const classes = useStyles();
 
     const [email, setEmail] = React.useState();
@@ -58,7 +88,6 @@ const ContactForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log("form submitted....")
 
         recaptchaRef.current.execute();
 
@@ -67,6 +96,13 @@ const ContactForm = props => {
             name,
             comments,
         }})
+
+        setModalOpen(false);
+        setModalChildren(
+            <Thanks />
+            )
+        setModalOpen(true)
+
     };
 
     const handleCaptchaChange = captchaResponse => {
