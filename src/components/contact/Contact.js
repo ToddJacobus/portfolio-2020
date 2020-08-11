@@ -72,6 +72,7 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'justify',
         marginLeft: 'auto',
         marginRight: 'auto',
+        maxWidth: 400,
     },
     profileImageContainer: {
         height: '100%',
@@ -87,6 +88,7 @@ const useStyles = makeStyles(theme => ({
         marginRight: 'auto',
     },
     listRoot: {
+        maxWidth: 400,
         marginLeft: 'auto',
         marginRight: 'auto',
     },
@@ -100,6 +102,11 @@ const useStyles = makeStyles(theme => ({
     chatButton: {
         // width: 50,
     },
+    socialListTitle: {
+        maxWidth: 400,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
 }));
 
 const ContactList = props => {
@@ -107,61 +114,57 @@ const ContactList = props => {
     const {} = props;
 
     return (
-        <div className={classes.listRoot}>
-            <Typography variant="h6">
-                You can also find my on socail media
+        <div>
+            <Typography 
+                variant="h6" 
+                className={classes.socialListTitle}
+            >
+                You can also find me on socail media
             </Typography>
-            <List>
-                {/* <ListItem>
-                    <ListItemIcon>
-                        <AlternateEmailIcon />
-                    </ListItemIcon>
-                    <ListItemText 
-                        className={classes.listItemText}
-                        primary="rtjacobus1@gmail.com"
-                        secondary="Shoot me an email"
-                    />
-                </ListItem> */}
-                <ListItem>
-                    <ListItemIcon>
-                        <TwitterIcon />
-                    </ListItemIcon>
-                    <ListItemText
-                        className={classes.listItemText}
-                        // primary="@jacobus_todd"
-                        primary={
-                            <MuiLink
-                                href="https://twitter.com/jacobus_todd"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                @jacobus_todd   
-                            </MuiLink>
-                        }
-                        secondary="Tweet me a tweet"
-                    />
-                </ListItem>
-                <ListItem>
-                    <ListItemIcon>
-                        <LinkedInIcon />
-                    </ListItemIcon>
-                    <ListItemText
-                        className={classes.listItemText}
-                        primary={
-                                <MuiLink 
-                                    href="https://www.linkedin.com/in/connect-with-todd-jacobus"
+            <div className={classes.listRoot}>
+                
+                <List>
+                    <ListItem>
+                        <ListItemIcon>
+                            <TwitterIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            className={classes.listItemText}
+                            primary={
+                                <MuiLink
+                                    href="https://twitter.com/jacobus_todd"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Todd Jacobus
+                                    @jacobus_todd   
                                 </MuiLink>
                             }
-                        secondary="Connect with me on LinkedIn"
-                    />
-                </ListItem>
+                            secondary="Tweet me a tweet"
+                        />
+                    </ListItem>
+                    <ListItem>
+                        <ListItemIcon>
+                            <LinkedInIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            className={classes.listItemText}
+                            primary={
+                                    <MuiLink 
+                                        href="https://www.linkedin.com/in/connect-with-todd-jacobus"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Todd Jacobus
+                                    </MuiLink>
+                                }
+                            secondary="Connect with me on LinkedIn"
+                        />
+                    </ListItem>
 
-            </List>    
+                </List>    
+            </div>    
         </div>
+        
         
     )
 }
