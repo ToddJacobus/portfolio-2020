@@ -31,6 +31,15 @@ const theme = createMuiTheme({
       fontFamily: "'Dosis', sans-serif",
     },
   },
+  palette: {
+    primary: {
+      main: "#3B8DBF",
+      light: "#89BAD9",
+    },
+    secondary: {
+      main: "#8C031C",
+    }
+  },
 });
 
 class App extends Component {
@@ -66,7 +75,11 @@ class App extends Component {
           <div>
             <Switch>
               <Route path="/contact">
-                <Contact />
+                <Contact 
+                  setModalChildren={this.setModalChildren}
+                  setModalOpen={this.setModalOpen}
+                  modalOpen={this.state.modalOpen}
+                />
               </Route>
               <Route path="/projects">
                 <Projects 

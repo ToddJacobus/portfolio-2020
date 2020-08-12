@@ -19,7 +19,6 @@ const Service = props => {
     const [noImageStyle, setNoImageStyle] = React.useState();
     React.useEffect(() => {
         image ? setNoImageStyle({}) : setNoImageStyle({
-            // TODO: write some classy css for a image placeholder
             border: "1px dashed red",
         })
     }, [image])
@@ -30,7 +29,7 @@ const Service = props => {
         root: {
             height: '100vh',
             flexGrow: 1,
-            backgroundColor: isHighlighted ? '#89BAD9' : undefined,
+            backgroundColor: isHighlighted ? theme.palette.primary.light : undefined,
         },
         imageGridItem: {
             width: '100%',
