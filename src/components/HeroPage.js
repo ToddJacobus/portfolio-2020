@@ -21,17 +21,21 @@ const useStyles = makeStyles(theme => ({
     panelContainer: {
         height: '100vh'
     },
-    leftPanel: {
+    imagePanel: {
         height: '100%',
-        [theme.breakpoints.down('sm')]: {
-            height: 300,
+        [theme.breakpoints.down('xs')]: {
+            height: '50%',
         },
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        textAlign: 'center',
     },
-    rightPanel: {
+    textPanel: {
         height: '100%',
-        [theme.breakpoints.down('sm')]: {
-            height: 300,
+        [theme.breakpoints.down('xs')]: {
+            height: '50%',
         },
         width: '100%',
         maxWidth: 800,
@@ -41,32 +45,17 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         justifyContent: 'center',
     },
-    heroImageContainer: {
-        width: '100%',
-        height: '100%',
-        maxWidth: 500,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    },
     heroImage: {
         width: '100%',
-        maxWidth: 450,
+        maxHeight: 400,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginTop: 15,
     },
     titleContainer: {
         maxHeight: 400,
         height: '100%',
-        position: 'relative'
     },
     title: {
-        position: 'absolute',
-        top: 30,
-        right: 5,
         marginRight: 20,
         marginLeft: 'auto',
         [theme.breakpoints.down('sm')]: {
@@ -75,9 +64,8 @@ const useStyles = makeStyles(theme => ({
         },
     },
     subTitle: {
-        position: 'absolute',
-        bottom: '15%',
-        right: 5,
+        marginTop: 20,
+        marginBottom: 20,
         marginRight: 20,
         marginLeft: 'auto',
         textAlign: 'justify',
@@ -111,24 +99,24 @@ const HeroPage = props => {
 
     return(
         <div className={classes.root}>
-            <Grid container className={classes.panelContainer}>
-                <Grid item sm={6} className={classes.leftPanel}>
-                    <div className={classes.heroImageContainer}>
-                        <img
-                            src="https://images.ctfassets.net/cfokra459rhp/65K1aZJJ3o9nQYu87B7xBZ/19b58e373d962d00d73ea8d9b900d2c6/SanFran-17-8570.jpg"
-                            className={classes.heroImage}
-                            alt="Hero"
-                        />   
-                    </div>
+            <Grid container spacing={4} className={classes.panelContainer}>
+                <Grid item sm={6} className={classes.imagePanel}>
+                    <img
+                        src="https://images.ctfassets.net/cfokra459rhp/65K1aZJJ3o9nQYu87B7xBZ/19b58e373d962d00d73ea8d9b900d2c6/SanFran-17-8570.jpg"
+                        className={classes.heroImage}
+                        alt="Hero"
+                    /> 
                 </Grid>
-                <Grid item sm={6} className={classes.rightPanel}>
+                <Grid item sm={6} className={classes.textPanel}>
                     <div className={classes.titleContainer}>
-                        <Typography variant="h1" className={classes.title}>Todd Jacobus</Typography>
-                                <Typography variant="h6" className={classes.subTitle}>
-                                    Specializing in geospatial data visualization, 
-                                    analysis and processing.  Delivering hand-crafted
-                                    web products, designed with care, front to back.
-                                </Typography> 
+                        <Typography variant="h1" className={classes.title}>
+                            Todd Jacobus
+                        </Typography>
+                        <Typography variant="h6" className={classes.subTitle}>
+                            Specializing in geospatial data visualization, 
+                            analysis and processing.  Delivering hand-crafted
+                            web products, designed with care, front to back.
+                        </Typography> 
                     </div>
                 </Grid>
             </Grid>
