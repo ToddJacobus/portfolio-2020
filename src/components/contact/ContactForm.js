@@ -27,13 +27,12 @@ const useStyles = makeStyles(theme => ({
     },
     formRoot: {
         '& .MuiTextField-root': {
-            width: '25ch',
+            // width: '25ch',
+            width: '100%',
         },
     },
     formControl: {
-        '& .MuiFormControl-root': {
-            width: '100%',
-        },
+        width: '100%',
     },
     textFieldContainer: {
         marginTop: 15,
@@ -123,24 +122,26 @@ const ContactForm = props => {
     return (
         <div className={classes.root}>
             <form onSubmit={e => handleSubmit(e)} className={classes.formRoot} >
+            
                 <FormControl required className={classes.formControl} >
                     <InputLabel htmlFor="email-input" >Email Address</InputLabel>
                     <Input 
                         id="email-input" 
                         aria-describedby="email-helper-text" 
                         onChange={e => setEmail(e.target.value)}
+                        fullWidth={true}
                     />
                     <FormHelperText id="email-helper-text" >
                         I'll never share your email
                     </FormHelperText>
                 </FormControl>
-
-                <FormControl className={classes.formControl}>
+                <FormControl required className={classes.formControl}>
                     <InputLabel htmlFor="name-input" >Name</InputLabel>
                     <Input 
                         id="name-input" 
                         aria-describedby="name-helper-text" 
                         onChange={e => setName(e.target.value)}
+                        fullWidth={true}
                     />
                 </FormControl>
                 <div className={classes.textFieldContainer}>
@@ -151,6 +152,10 @@ const ContactForm = props => {
                         onChange={e => setComments(e.target.value)}
                     />    
                 </div>
+
+            
+
+
                 <div className={classes.buttonContainer}>
                     <Button
                         variant="contained"
