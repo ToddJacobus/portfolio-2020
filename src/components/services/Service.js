@@ -27,7 +27,7 @@ const Service = props => {
 
     const useStyles = makeStyles(theme => ({
         root: {
-            height: '100vh',
+            minHeight: '100vh',
             flexGrow: 1,
             backgroundColor: isHighlighted ? theme.palette.primary.light : undefined,
         },
@@ -40,6 +40,9 @@ const Service = props => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
+            // marginTop: 20,
+            // marginBottom: 20,
+            margin: 20,
         },
         image: {
             width: 300,
@@ -56,15 +59,14 @@ const Service = props => {
         },
         tagline: {
             textAlign: 'left',
-            marginLeft: 50,
-            marginRight: 50,
-            marginBottom: 50,
+            margin: 50,
             color: isHighlighted ? "white" : undefined
         },
         description: {
             textAlign: 'justify',
             marginLeft: 50,
             marginRight: 50,
+            marginBottom: 50,
             color: isHighlighted ? "white" : undefined
         },
     }));

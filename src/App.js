@@ -18,17 +18,17 @@ import GenericModal from './components/GenericModal';
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      '"Montserrat"',
+      '"Hind"',
       'sans-serif',
     ].join(','),
     h1: {
-      fontFamily: "'Dosis', sans-serif",
+      fontFamily: "'Montserrat', sans-serif",
     },
     h2: {
-      fontFamily: "'Dosis', sans-serif",
+      fontFamily: "'Montserrat', sans-serif",
     },
     h3: {
-      fontFamily: "'Dosis', sans-serif",
+      fontFamily: "'Montserrat', sans-serif",
     },
   },
   palette: {

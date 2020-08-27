@@ -119,7 +119,7 @@ const ContactList = props => {
                 variant="h6" 
                 className={classes.socialListTitle}
             >
-                You can also find me on socail media
+                You can also find me on social media
             </Typography>
             <div className={classes.listRoot}>
                 
