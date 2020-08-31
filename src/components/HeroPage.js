@@ -80,7 +80,7 @@ const useStyles = makeStyles(theme => ({
         position: 'relative',
         bottom: 100,
         [theme.breakpoints.down('sm')]: {
-            bottom: 40,
+            bottom: 20,
         },
         width: '100%',
     },
