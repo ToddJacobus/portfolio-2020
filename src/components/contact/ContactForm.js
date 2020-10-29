@@ -60,10 +60,14 @@ const useStyles = makeStyles(theme => ({
     thanksImageContainer: {
         width: 100,
         height: 100,
-        border: '1px dashed red',
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: 20,
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        fontSize: 70,
     },
 }))
 
@@ -78,7 +82,7 @@ const Thanks = props => {
                  email.
             </Typography>
             <div className={classes.thanksImageContainer}>
-                {/* image here */}
+                <span aria-label="T-Rex Emoji" role='img'>🦖</span>
             </div>
         </div>
     )
