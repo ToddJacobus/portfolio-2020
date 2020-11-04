@@ -66,12 +66,12 @@ const Lister = props => {
 
     return (
         <div className={classes.listerRoot}>
-            <Typography 
+            {/* <Typography 
                 className={classes.listerText} 
                 variant={'h6'
             }>
                 {title}
-            </Typography>
+            </Typography> */}
             <List>
                 {
                     items ? items.map((item, index) => {
