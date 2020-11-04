@@ -80,7 +80,7 @@ const useStyles = makeStyles(theme => ({
         position: 'relative',
         bottom: 100,
         [theme.breakpoints.down('sm')]: {
-            bottom: 40,
+            bottom: 20,
         },
         width: '100%',
     },
@@ -113,9 +113,10 @@ const HeroPage = props => {
                             Todd Jacobus
                         </Typography>
                         <Typography variant="h6" className={classes.subTitle}>
-                            Specializing in geospatial data visualization, 
-                            analysis and processing.  Delivering hand-crafted
-                            web products, designed with care, front to back.
+                        I'm a freelance, full-stack software engineer and specialized 
+                        in geospatial applications.  Need a map-based ecommerce 
+                        site for your business or a GIS processing and data pipeline? 
+                        Get in touch and let's find a solution.
                         </Typography> 
                     </div>
                 </Grid>
