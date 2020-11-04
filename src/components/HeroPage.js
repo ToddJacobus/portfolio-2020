@@ -91,6 +91,9 @@ const useStyles = makeStyles(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
     },
+    primaryButton: {
+
+    },
 }))
 
 
@@ -134,12 +137,14 @@ const HeroPage = props => {
                         component={Link}
                         to="/projects"
                     >
-                        Past Work
+                        Portfolio
                     </Button>
                     <hr></hr>
                     <Button
                         component={Link}
                         to="/contact"
+                        className={classes.primaryButton}
+                        color="primary"
                     >
                         Contact
                     </Button>
