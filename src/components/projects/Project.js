@@ -62,16 +62,10 @@ const useStyles = makeStyles(theme => ({
 
 const Lister = props => {
     const classes = useStyles();
-    const { items, title } = props;
+    const { items } = props;
 
     return (
         <div className={classes.listerRoot}>
-            {/* <Typography 
-                className={classes.listerText} 
-                variant={'h6'
-            }>
-                {title}
-            </Typography> */}
             <List>
                 {
                     items ? items.map((item, index) => {
