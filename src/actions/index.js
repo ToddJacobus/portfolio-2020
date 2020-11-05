@@ -20,6 +20,11 @@ export const fetchServices = props => async dispatch => {
     dispatch({type: 'GET_SERVICES', payload: response.data})
 }
 
+export const fetchTestimony = props => async dispatch => {
+    const response = await getContent.get(`?access_token=${API_TOKEN}&content_type=testimony`)
+    dispatch({type: 'GET_TESTIMONY', payload: response.data})
+}
+
 //  --  DATA POST ACTIONS
 export const sendContact = props => async dispatch => {
     const { data } = props;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { 
     Grid, 
@@ -10,6 +11,12 @@ import {
 import {
     Link,
 } from 'react-router-dom';
+
+import TestimonyTicker from './TestimonyTicker';
+
+import {
+    fetchTestimony
+} from '../actions';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -98,10 +105,19 @@ const useStyles = makeStyles(theme => ({
 
 
 const HeroPage = props => {
+    const { 
+        fetchTestimony,
+        testimony_content, 
+    } = props;
     const classes = useStyles();
+
+    React.useEffect(() => {
+        fetchTestimony();
+    }, [fetchTestimony]);
 
     return(
         <div className={classes.root}>
+            <TestimonyTicker items={testimony_content ? testimony_content.items : []} />
             <Grid container spacing={4} className={classes.panelContainer}>
                 <Grid item sm={6} className={classes.imagePanel}>
                     <img
@@ -155,4 +171,15 @@ const HeroPage = props => {
     )
 }
 
-export default HeroPage;
+const mapStateToProps = state => {
+    return {
+        testimony_content: state.testimony_content,
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {
+        fetchTestimony,
+    }
+)(HeroPage);

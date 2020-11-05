@@ -12,7 +12,6 @@ import HeroPage from './components/HeroPage';
 import Services from './components/services/Services';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
-import HowItWorks from './components/howItWorks/HowItWorks';
 import GenericModal from './components/GenericModal';
 
 
