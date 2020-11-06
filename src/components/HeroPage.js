@@ -12,7 +12,7 @@ import {
     Link,
 } from 'react-router-dom';
 
-import TestimonyTicker from './TestimonyTicker';
+import Ticker from './Ticker';
 
 import {
     fetchTestimony
@@ -117,7 +117,12 @@ const HeroPage = props => {
 
     return(
         <div className={classes.root}>
-            <TestimonyTicker items={testimony_content ? testimony_content.items : []} />
+            {
+                testimony_content && testimony_content.items ?
+                <Ticker items={testimony_content.items}/>
+                : <div />
+            }
+            {/* <Ticker items={testimony_content ? testimony_content.items : undefined} /> */}
             <Grid container spacing={4} className={classes.panelContainer}>
                 <Grid item sm={6} className={classes.imagePanel}>
                     <img
